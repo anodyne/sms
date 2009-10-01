@@ -1,0 +1,120 @@
+/**
+This is a necessary stylesheet for system use. Deletion or modification of this file
+may cause parts of the system to fail!
+
+Author: David VanScott [ davidv@anodyne-productions.com ], Chris Wanstrath [ chris@ozmm.org ]
+File: framework/css/facebox.css
+Purpose: Stylesheet that controls the HUD display
+
+Last Modified: 2009-01-11 0216 EST
+**/
+
+#facebox {
+	position: absolute;
+	/*top: 50px;*/
+	/*left: 50%;*/
+	z-index: 100;
+	text-align: left;
+	margin-left: -375px;
+	
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 12px;
+	color: #fff;
+}
+
+#facebox .popup {
+	position: relative;
+	width: 750px;
+}
+
+#facebox .hud_body {
+	width: 750px;
+	margin: 0 auto;
+	
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	
+	background: #3a3a3a;
+	border: 1px solid #555;
+}
+
+#facebox .hud_title {
+	height: 22px;
+	line-height: 22px;
+	
+	text-align: center;
+	font-weight: bold;
+	font-size: 110%;
+	border-bottom: 1px solid #252525;
+}
+
+#facebox .content_hud {}
+
+#facebox .content_hud table td.hudLabel {
+	width: 20%;
+	
+	font-weight: bold;
+	text-align: right;
+}
+
+#facebox .loading { text-align: center; }
+
+#facebox .image { text-align: center; }
+
+#facebox img { border: 0; }
+
+#facebox .close_image {
+	float: left;
+	padding: 4px 0 0 8px;
+}
+
+/*----- input classes -----*/
+#facebox input[type=text] {
+	border: 1px solid #7f8187;
+	background-color: #3a3a3a;
+	padding: 4px;
+	
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 11px;
+	color: #fff;
+	text-align: left;
+}
+#facebox textarea {
+	width: 90%;
+	border: 1px solid #7f8187;
+	background-color: #3a3a3a;
+	padding: 4px;
+	
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 11px;
+	color: #fff;
+}
+#facebox select {
+	border: 1px solid #7f8187;
+	background-color: #3a3a3a;
+	padding: 2px;
+}
+
+/*----- activate/delete post content class -----*/
+#facebox .overflow {
+	overflow-y: auto;
+	max-height: 200px;
+	margin-bottom: 20px;
+}
+
+#facebox_overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+}
+
+.facebox_hide {
+	z-index: -100;
+}
+
+.facebox_overlayBG {
+	background-color: #000;
+	z-index: 99;
+}

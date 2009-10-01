@@ -1,0 +1,174 @@
+/**
+Author: David VanScott [ davidv@anodyne-productions.com ]
+File: install/install.css
+Purpose: Stylesheet that controls the look and feel of the install pages
+Last Modified: 2008-04-24 1517 EST
+**/
+
+body {
+	background-color: #f1f1f1;
+	color: #444;
+	font-family: "Lucida Grande", "Verdana", Arial, sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+
+#install {
+	background-color: #d1d1d1;
+	width: 95%;
+	margin: 0 auto;
+	border: 1px solid #a2a2a2;
+	text-align: left;
+}
+
+a { color: #3478ae; }
+a:hover { color: #ab1b00; }
+
+.header { text-align: center; }
+.header-install {
+	width: 95%;
+	margin: 1em auto 0 auto;
+	text-align: center;
+	height: 70px;
+	line-height: 70px;
+	border-top: 1px solid #a2a2a2;
+	border-left: 1px solid #a2a2a2;
+	border-right: 1px solid #a2a2a2;
+}
+.header-install h1 {
+	font-size: 30px;
+	margin: 0;
+	padding: 0;
+}
+
+#install h1 { font-size: 20pt; }
+
+#install .full { padding: 1em; }
+#install .left {
+	float: left;
+	width: 20%;
+}
+#install .right {
+	margin-left: 20%;
+	background-color: #f1f1f1;
+	padding: 1em 1em 1em 3em;
+	min-height: 360px;
+	border-left: 1px solid #a2a2a2;
+}
+
+#install ul {}
+#install ul li { list-style-type: square; }
+
+#install .left ul {
+	margin: 0 0 0 10px;
+	padding: 1em 0;
+}
+#install .left ul li {
+	list-style-type: none;
+	display: block;
+	padding: 10px 10px 10px 3px;
+	clear: both;
+	line-height: 32px;
+	color: #777;
+}
+#install .left ul li.active {
+	background-color: #f1f1f1;
+	color: #444;
+	font-weight: bold;
+	border-top: 1px solid #a2a2a2;
+	border-bottom: 1px solid #a2a2a2;
+	border-left: 1px solid #a2a2a2;
+	margin-right: -1px;
+}
+
+.step-image {
+	float: left;
+	padding-right: 10px;
+}
+
+.footer {
+	text-align: center;
+	font-size: 10px;
+	padding: 2em 0;
+	clear: left;
+}
+
+input[type=submit] {
+	font-size: 20px;
+	background: #f1f1f1;
+	border: 1px solid #999;
+}
+input[type=submit]:hover {
+	background-color: #f9f9f9;
+	border: 1px solid #444;
+}
+
+input, textarea {
+	background: #f1f1f1;
+	border: 1px solid #999;
+	color: #444;
+	margin: 1px;
+	padding: 3px;
+}
+input:focus, textarea:focus {
+	background: #f9f9f9;
+	border: 1px solid #444;
+	color: #000;
+}
+textarea {
+	font-family: "Lucida Grande", "Verdana", Arial, sans-serif;
+	font-size: 100%;
+}
+.text {
+	font-size: .8em;
+}
+.label {
+	text-align: right;
+	width: 25%;
+	font-weight: bold;
+}
+select {
+	border: 1px solid #666;
+	color: #000;
+	padding: .2em .2em .2em 0;
+	font-size: 8.5pt;
+}
+.code {
+	width: 98%;
+	color: #fff;
+	font-weight: bold;
+	padding: .5em;
+	background-color: #090909;
+	border: 1px solid #a2a2a2;
+}
+.red b { color: #fff; }
+
+/** TABLES **/
+table {
+	font-size: 13px;
+	font-weight: bold;
+}
+table th {
+	background: #ddd;
+	font-size: 14px;
+}
+table .col1 { width: 300px; }
+table .col2, table .col3 { width: 150px; }
+table span.red { font-weight: normal; }
+
+.fontLarge {
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.bold { font-weight: bold; }
+.red { color: #c00; }
+.green { color: #080; }
+.orange { color: orange; }
+
+.readme {
+	border: 1px solid #a2a2a2;
+	margin: 1em;
+	padding: 1em;
+	background-color: #f1f1f1;
+}

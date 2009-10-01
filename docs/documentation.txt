@@ -1,0 +1,35 @@
+These items will need to be documented before the release of 2.6.0
+===
+
+#	Rank Management - Top Link Images
+	On the rank management page, SMS dynamically builds a group of linked images that correspond to all the colors used by the different ranks. In order for this sub-menu to be accurately generated two things need to be in place. First, there must be a rank image that correspond to that color in the form of <color>-blank.png. Second, there must be an entry in the database that points to the <color>-blank.png rank image. If both of those are present, SMS will generate the sub-menu accurately and on the fly.
+
+#	Rank Management - Class Drop-Downs
+	One of the changes introduced in SMS 2.6 is the simplification of rank management. Before, we required users to know the rank class, a number which corresponded to the grouping of departments. The Command, Flight Control, and Strategic Operations departments were all grouped under department class 1. In turn, all red ranks were tied to that same department class. This process continues down through the ranks. In SMS 2.6, we're now using a simple drop-down menu for users to select the department grouping. Instead of showing all the department though, the drop-down only shows the first department with that grouping. To further help with the visual distinction, the names in the drop-downs have been styled to use the appropriate color that corresponds to that group.
+
+#	Personalized Menu Arrows
+	If a situation arises where the arrow image used by the personalized menu doesn't fit with your skin, changing it is extremely easy. Simply add an image named arrow.png to your skin's images folder. SMS will detect the new arrow image and use it instead of the default image.
+
+#	Mission Post & Personal Log Editing
+	SMS 2.6 now allows for crew members to edit their own mission posts and personal logs. In order to accomplish this, some new access levels were added. There are now 2 levels for managing mission posts and personal logs. With level 1 access, a person can only edit their own personal logs or mission posts they're involved in. For mission posts, level 1 access cannot edit the mission or the status of the post (for obvious reasons). For personal logs, level 1 access cannot edit the author of the log or the status. With level 2 access, a person can edit anyone's posts or logs as well as editing everything about those posts and/or logs.
+
+#	Update Notification
+	SMS 2.6 now allows admins to tell the system whether or not they want to be notified of updates. There are 3 options. The first, and the default, is to be notified of all SMS updates. The second option is only to be notified of major updates. If this option is selected, the next time SMS will notify you of an update is on the release of SMS 3.0 (or in the unlikely event Anodyne releases a small SMS 2.7 release). The final option is to not be notified of updates. Anodyne recommends that admins be notified of all releases so admins will be immediately aware of any critical or security updates that are released.
+	
+#	Acceptance/Rejection Messages
+	New to SMS are dynamic acceptance and rejection messages. Instead of writing a general acceptance and/or rejection letter then having to edit the rank, position, and name information, admins can now set wild cards in place of those items. Upon sending the email, SMS will automatically replace those wild cards with the appropriate rank, position, and name information. For instance, inserting the wild card #rank# into an acceptance message would dynamically replace that wild card with the rank Ensign (supposing that was the rank chosen for the new player). This way, the admin doesn't have to do anything more than maybe update the information about the current mission. Wild cards exists for rank (#rank#), position (#position#), name (#name#), and ship name (#ship#).
+
+#	Departmental Databases
+	Now every department will have a place to keep information only about their department. In order to accomplish this, we've added 2 levels of database access. Database-1 access will allow someone to create, edit, and delete database entries for the department their first position is in. Database-2 access will allow someone to create, edit, and delete all database entries, including the Global Entries. Access to the department's database can be given to anyone in the department. In addition, admins can setup which departments do and don't have access to a department database through the department management page. If a player is given Database-1 privileges, they'll also need Manage privileges as well.
+
+#	Setting Default Access Levels for Groups
+	SMS 2.5 introduced a more robust way of giving users access to portions of the system. Gone was the 5-level system that had been used before, replaced with a system that allowed admins to give individual players access to individual pages if they wanted. SMS 2.6 takes that a step further by now allowing admins to setup the defaults for the different access groups (CO, XO, Department Head, Standard Player). A new menu item was created, Default Access Levels, for editing these groups.
+
+#	Award Nominations
+	Whenever a crew member nominations a playing character or non-playing character for an award, instead of being emailed to the CO and XO (like before), the award is put into a queue for the admins to review. If they agree, they can simply approve the nomination and the award will be added to the character's bio, otherwise, they can deny it and nothing will happen. The system will still send an email out that someone's been nominated for an award, but it'll send it to anyone with Give Crew Award privileges. When approving an award nomination (or giving an award), the system now accepts more information than before, allowing admins to give a reason for the award as well as putting a timestamp in place so that everyone knows when and why the award was given.
+
+#	The New Inbox
+	SMS 2.6 introduces a radically different private messages inbox. Now using tabs, the inbox is broken into Inbox, Outbox, and Compose sections. Instead of composing private messages in another section, you'll just compose your message right there. In addition to the inbox changes, when you reply to a private message, the text of the message you're replying to will be displayed below the compose box.
+	
+#	Smarter Skins
+	New for this version of SMS, the default skin (and all skins released by Anodyne) now use some dynamic location variables. In previous versions, when you duplicated a skin to create your own, you had to make sure that you changed all the static location references (changing default to SKIN_NAME). Now, with the dynamic location code, once you duplicate a skin, it knows where it is and where it should be pulling files from, so you don't need to change static location references any more.

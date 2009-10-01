@@ -1,0 +1,61 @@
+1.	use the explain command
+Use multiple-row INSERT statements to store many rows with one SQL statement.
+The explain command can tell you which indexes are used with the specified query and many other 
+pieces of useful information that can help you choose a better index or query.
+
+Example of usage: explain select * from table
+
+explanation of row output:
+	* table—The name of the table.
+	* type—The join type, of which there are several.
+	* possible_keys—This column indicates which indexes MySQL could use to find the rows in this 
+		table. If the result is NULL, no indexes would help with this query. You should then take 
+		a look at your table structure and see whether there are any indexes that you could create 
+		that would increase the performance of this query.
+	* key—The key actually used in this query, or NULL if no index was used.
+	* key_len—The length of the key used, if any.
+	* ref—Any columns used with the key to retrieve a result.
+	* rows—The number of rows MySQL must examine to execute the query.
+	* extra—Additional information regarding how MySQL will execute the query. There are several 
+		options, such as Using index (an index was used) and Where (a WHERE clause was used).
+
+2.	use less complex permissions
+The more complex your permissions setup, the more overhead you have. Using simpler permissions when 
+you issue GRANT statements enables MySQL to reduce permission-checking overhead when clients execute 
+statements.
+
+3.	specific mysql functions can be tested using the built-in “benchmark” command
+If your problem is with a specific MySQL expression or function, you can perform a timing test by 
+invoking the BENCHMARK() function using the mysql client program. Its syntax is BENCHMARK(loop_count,expression). 
+The return value is always zero, but mysql prints a line displaying approximately how long the 
+statement took to execute
+
+4.	optimize where clauses
+	* Remove unnecessary parentheses
+	* COUNT(*) on a single table without a WHERE is retrieved directly from the table information for 
+		MyISAM and MEMORY tables. This is also done for any NOT NULL expression when used with only one table.
+	* If you use the SQL_SMALL_RESULT option, MySQL uses an in-memory temporary table
+
+5.	Run optimize table
+This command defragments a table after you have deleted a lot of rows from it.
+
+6.	avoid variable-length column types when necessary
+For MyISAM tables that change frequently, you should try to avoid all variable-length columns 
+(VARCHAR, BLOB, and TEXT). The table uses dynamic row format if it includes even a single 
+variable-length column.
+
+7.	insert delayed
+Use insert delayed when you do not need to know when your data is written. This reduces the overall 
+insertion impact because many rows can be written with a single disk write.
+
+8.	use statement priorities
+	* Use INSERT LOW_PRIORITY when you want to give SELECT statements higher priority than your inserts.
+	* Use SELECT HIGH_PRIORITY to get retrievals that jump the queue. That is, the SELECT is executed even 
+		if there is another client waiting.
+
+9.	use multiple-row inserts
+Use multiple-row INSERT statements to store many rows with one SQL statement.
+
+10.	synchronize data-types
+Columns with identical information in different tables should be declared to have identical data 
+types so that joins based on the corresponding columns will be faster. 

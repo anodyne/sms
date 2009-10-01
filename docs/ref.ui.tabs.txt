@@ -1,0 +1,32 @@
+http://docs.jquery.com/UI/Tabs
+
+====
+
+$(document).ready(function(){
+	$('#example > ul').tabs();
+});
+
+====
+
+// add slide effect to a tab
+$('#example > ul').tabs({ fxSlide: true });
+
+// add a fast fade effect to a tab
+$('#example > ul').tabs({ fxFade: true, fxSpeed: 'fast' });
+
+// add a slide and fade effect
+$('#example > ul').tabs({ fxSlide: true, fxFade: true, fxSpeed: 'normal' });
+
+// disable one of the tabs (no-zero-based index)
+$('#example > ul').tabs({ disabled: [3] });
+
+// start with one of the tabs selected (no-zero-based index)
+$('#example > ul').tabs(2);
+
+// start with one of the tabs selected and another disabled
+$('#example > ul').tabs(2, { disabled: [1] });
+
+====
+
+ULs in tab containers
+http://stilbuero.de/jquery/tabs/test.html

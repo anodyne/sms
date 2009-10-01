@@ -1,0 +1,21 @@
+a.add_icon {
+	height: 16px;
+	width: 32px;
+	
+	background: url('../../images/add.png') no-repeat 0 0;
+}
+
+a.add_icon:hover {
+	background-position: 0 -16px;
+}
+
+a.remove_icon {
+	height: 16px;
+	width: 32px;
+	
+	background: url('../../images/remove.png') no-repeat 0 0;
+}
+
+a.remove_icon:hover {
+	background-position: 0 -16px;
+}

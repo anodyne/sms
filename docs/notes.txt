@@ -1,0 +1,72 @@
+Counting lines in a directory:
+
+1)	Open Terminal
+2)	Go to the directory you want to count
+3)	Type: find . -name '*.php' | xargs wc -l
+
+Counting total files in a directory:
+
+1) Open Terminal
+2) Go to the parent directory
+3) Type: find "sms2/" \! -name ".*" | wc -l
+
+Counting total PHP files in a directory:
+
+1) Open Terminal
+2) Go to the parent directory
+3) Type: find "sms2/" \! -name "*.php" | wc -l
+
+====
+
+LINE COUNTS
+
+lines / files
+
+Wordpress 2.3.1		56257 / 529
+TRSM				12271 / NO DATA
+IFS					37538 / NO DATA
+SMS2 Trunk			31719 / 768
+
+SMS 1.2.0			09030 / 388 (323)
+
+SMS 1.5.0			16178 / 543 (449)
+SMS 1.5.1			15777 / 595 (489)
+SMS 1.5.2			NO DATA
+SMS 1.5.3			15799 / 595 (489)
+SMS 1.5.4			16030 / 595 (491)
+SMS 1.5.5			16045 / 595 (492)
+SMS 1.5.6			16129 / 386 (285)
+
+SMS 2.0.0			19098 / 780 (698)
+SMS 2.0.1			19295 / 781 (698)
+SMS 2.0.2			19682 / 781 (696)
+SMS 2.1.0			20318 / 788 (700)
+SMS 2.1.1			20392 / 788 (700)
+SMS 2.2.0			21721 / 788 (701)
+SMS 2.2.1			21947 / 788 (701)
+SMS 2.3.0			24433 / 799 (707)
+SMS 2.4.0			27532 / NO DATA
+
+SMS 2.5.0-RC1		34205 / 726
+
+===
+New counts exclude phpSniff and MagpieRSS directories
+
+phpSniff	1143 / 8
+MagpieRSS	261 / 28
+CI Guide	- / 140
+
+SMS2 Trunk	39,042 / 1073
+
+CodeIgniter	37,605 / 196 (minus user guide)
+SMS3 Trunk	13,900 / 600 (minus code igniter) - way off because of the .svn files
+
+SMS 2.5.4	32,528 / 700
+SMS 2.5.5	32,630 / 701
+
+SMS 2.6-b1	37,539 / 515
+
+===
+
+CI 1.6.3	39,592 / 201
+SMS3-M1		18,509 / 1,637

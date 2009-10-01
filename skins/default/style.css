@@ -1,0 +1,216 @@
+/**
+This skin is the property of its owner and should not be duplicated or
+reproduced with the express written consent of the author. Edits to this skin
+are permissible if the original credits stay intact.
+
+Author: David VanScott [ davidv@anodyne-productions.com ]
+File: skins/default/style.css
+Purpose: Stylesheet that controls the look and feel of the site
+
+Skin Version: 2.5
+Last Modified: 2008-04-05 1526 EST
+**/
+
+/*
+|---------------------------------------------------------------
+| INCLUDED STYLESHEETS
+|---------------------------------------------------------------
+|
+| The following stylsheets are required for the system to be displayed
+| properly.
+|
+*/
+@import url( "style-misc.css" );
+@import url( "style-login.css" );
+@import url( "style-ui.tabs.css" );
+@import url( "style-clickmenu.css" );
+
+/*
+|---------------------------------------------------------------
+| GLOBAL STYLES
+|---------------------------------------------------------------
+|
+| Styles that are global to the HTML or BODY
+|
+*/
+body {
+	margin: 0;
+	padding: 0;
+	
+	background-color: #000;
+	color: #fff;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 12px;
+}
+
+/*
+|---------------------------------------------------------------
+| CONTAINER STYLES
+|---------------------------------------------------------------
+|
+| The container holds the entire content of the site.
+|
+*/
+#container {
+	width: 100%;
+	margin: auto;
+}
+
+/* styles that control the top and bottom spacers */
+#headerTopSpacer { height: 20px; }
+#container .footerBottomSpacer { height: 30px; }
+
+/* the template header */
+#header {
+	width: 100%;
+	height: 110px;
+	margin: auto;
+	
+	border-top: 1px solid #111;
+	border-bottom: 1px solid #111;
+	background: #090909 url( 'images/header.png' ) no-repeat top left;
+}
+
+
+
+/*
+|---------------------------------------------------------------
+| MAIN NAVIGATION STYLES
+|---------------------------------------------------------------
+|
+| Styles controlling the main navigation of the system.
+|
+*/
+#container .mainNav {
+	height: 25px;
+	line-height: 25px;
+	margin: .5em 0 0 2em;
+	width: auto;
+	
+	background: #000;
+}
+#nav-main {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	float: left; /* this makes sure that the drop down sits to the right of the main nav */
+}
+#nav-main li {
+	display: inline;
+	list-style: none;
+}
+#nav-main li.spacer { padding: 2px 0 0 0; }
+#nav-main li a {
+	font-weight: bold;
+	color: #fff;
+	padding: 0 1em 0 1em;
+}
+#nav-main li a:hover { color: #648295; }
+
+
+
+/*
+|---------------------------------------------------------------
+| CONTENT STYLES
+|---------------------------------------------------------------
+|
+| Styles that control the content layer of the system (includes
+| the body and side navigation as well)
+|
+*/
+#container .content { padding: 0 2em 0 2em; }
+
+/*
+|---------------------------------------------------------------
+| BODY STYLES
+|---------------------------------------------------------------
+|
+| Styles that control the body of the system (where all the content is held)
+|
+*/
+#container .content .body {
+	margin-right: 20%;
+	padding: 1em 0 1em 1em;
+}
+
+/*
+|---------------------------------------------------------------
+| SIDE NAVIGATION STYLES
+|---------------------------------------------------------------
+|
+| Styles that control the side navigation
+|
+*/
+#container .content .nav {
+	float: right;
+	width: 18%;
+	padding: 1.5em 0 1em 0;
+	
+	font-size: 95%;
+	text-align: right;
+}
+#container .content .nav ul {
+	display: block;
+	margin: 0;
+	padding: .5em .2em 1em 0;
+}
+#container .content .nav ul li { list-style-type: none; }
+#container .content .nav a { padding: 0 .5em 0 0; }
+
+/* part of the nav menu ... controls the login display */
+#container .content .nav .login a { padding: 0; }
+
+/* part of the nav menu ... controls the info below the menu */
+#container .content .nav .info { padding: 0 1em 0 2em; }
+#container .content .nav .info .fontLarge { margin: 0 -.5em 0 0; }
+#container .content .nav .info a { margin: 0 -.5em 0 0; }
+
+/*
+|---------------------------------------------------------------
+| FOOTER STYLES
+|---------------------------------------------------------------
+|
+| Styles that control the footer
+|
+*/
+#container .footer {
+	clear: both;
+	height: 25px;
+	line-height: 25px;
+	
+	background: #090909;
+	color: #fff;
+	border-top: 1px solid #111;
+	border-bottom: 1px solid #111;
+	text-align: center;
+	font-size: 80%;
+}
+
+/** NEEDS TO COME OUT BEFORE RELEASE! **/
+/*
+#mainNav, #userNav {
+	height: 25px;
+	line-height: 25px;
+	width: 100%;
+	
+	background: #000;
+	text-align: center;
+}
+#mainNav ul, #userNav ul {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+#mainNav ul li, #userNav ul li {
+	display: inline;
+	list-style-type: none;
+}
+#mainNav ul li.spacer, #userNav ul li.spacer {
+	padding-top: 2px;
+}
+#mainNav a, #userNav a {
+	font-weight: bold;
+	color: #fff;
+	padding: 0 1em 0 1em;
+}
+#mainNav a:hover, #userNav a:hover { color: #5b5a4f; }*/

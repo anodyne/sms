@@ -1,0 +1,317 @@
+/**
+This skin is the property of its owner and should not be duplicated or
+reproduced with the express written consent of the author. Edits to this skin
+are permissible if the original credits stay intact.
+
+Author: David VanScott [ davidv@anodyne-productions.com ]
+File: skins/cobalt/style-misc.css
+Purpose: Stylesheet that controls several of the miscellaneous items throughout
+	the system
+
+Skin Version: 2.0
+Last Modified: 2008-06-22 1713 EST
+**/
+
+/*
+|---------------------------------------------------------------
+| LINK STYLES
+|---------------------------------------------------------------
+|
+| Styles that control the various link styles
+|
+*/
+
+/* suggested colors:
+	
+	if you change this color, you'll still need to change
+	some other colors throughout the skin
+	
+	red - #701b23
+	green - #228720
+	blue - #4678cb / #a2bbe5
+*/
+a {
+	text-decoration: none;
+	color: #4678cb;
+}
+a:hover { color: #a2bbe5; }
+
+/** delete **/
+a.delete { text-decoration: none; }
+a:hover.delete { color: #cc0000; }
+
+/** edit **/
+a.edit { text-decoration: none; }
+a:hover.edit { color: #d8eb52; }
+
+/** add **/
+a.add { text-decoration: none; }
+a:hover.add { color: #70c16e; }
+
+/*
+|---------------------------------------------------------------
+| SPECIAL FONT STYLES
+|---------------------------------------------------------------
+|
+| Styles for the various font classes
+|
+*/
+.fontTitle {
+	font-size: 200%;
+	font-weight: bold;
+}
+.fontLarge { font-size: 140%; }
+.fontMedium { font-size: 120%; }
+.fontNormal { font-size: 95%; }
+.fontSmall { font-size: 75%; }
+
+/** bold and case styles **/
+.case { text-transform: uppercase; }
+.bold { font-weight: bold; }
+
+/** errors **/
+.error {
+	color: #cc0000;
+	font-weight: bold;
+}
+
+/** colors **/
+.red { color: #9c2c2c; }
+.green { color: #008000; }
+.yellow { color: #dfd530; }
+.blue { color: #416eba; }
+.orange { color: #e99e1c; }
+
+/*
+|---------------------------------------------------------------
+| FORM CONTROLS
+|---------------------------------------------------------------
+|
+| Form control styles
+|
+*/
+select {
+	padding: .2em .2em .2em 0;
+	
+	background-color: #000;
+	color: #f1f1f1;
+	border: 1px solid #666;
+	font-size: 95%;
+}
+
+/** input boxes **/
+input[type=text] {
+	padding: 3px;
+	
+	background-color: #000;
+	color: #efefef;
+	border: 1px solid #888;
+	font-size: 95%;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+}
+input[type=password] {
+	background-color: #000;
+	border: 1px solid #888;
+	color: #efefef;
+	font-size: 8.5pt;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	padding: 3px;
+}
+
+/** button classes **/
+input.button { padding: 0; }
+
+/** input classes **/
+input.class, input.order { width:25px; }
+input.name { width:329px; }
+input.image { width:225px; }
+input.color { width:60px; }
+input.date { width:125px; }
+
+/** text areas **/
+textarea {
+	background-color: #000;
+	border: 1px solid #888;
+	color: #efefef;
+	font-size: 8.5pt;
+	font-family: "Lucida Grande", "Verdana", sans-serif;
+	padding: .2em;
+	width: 90%;
+}
+textarea.desc {}
+.wideTextArea { width: 99%; }
+
+/** specs text areas **/
+.specsText { width: 85%; }
+
+/*
+|---------------------------------------------------------------
+| TABLES
+|---------------------------------------------------------------
+|
+| Styles to control tables throughout the system.
+|
+*/
+table { width: 100%; }
+table.narrowTable { width: 75%; }
+table.images { width: auto; }
+
+/* used on the count page to put a vertical line in the table */
+.countTableBorder { border-right: 1px solid white; }
+
+/* control the table cell's label TD */
+.tableCellLabel {
+	width: 20%;
+	
+	text-align: right;
+	font-size: 100%;
+	font-weight: bold;
+}
+
+/*
+|---------------------------------------------------------------
+| NOTIFICATION PANEL
+|---------------------------------------------------------------
+|
+| Styles that control the look and feel of the notification panel.
+|
+*/
+.update { width: 97%; }
+.update a {
+	border-bottom: 1px solid #333;
+	color: #aaa;
+	font-weight: bold;
+	padding: 0 0 1px 0;
+}
+.update a:hover {
+	border-bottom: 1px solid #ddd;
+	color: #f1f1f1;
+}
+
+/** color styles **/
+.notify-orange {
+	padding: .2em .5em .3em 1em;
+	line-height: 1.3;
+	
+	background-color: #231804;
+	border: 1px solid #e99e1c;
+	border-left: 4px solid #e99e1c;
+}
+.notify-red {
+	padding: .2em .5em .3em 1em;
+	line-height: 1.4;
+	
+	background-color: #170707;
+	border: 1px solid #9c2c2c;
+	border-left: 4px solid #9c2c2c;
+}
+.notify-green {
+	padding: .2em .5em .3em 1em;
+	line-height: 1.4;
+	
+	background-color: #0b170b;
+	border: 1px solid #4b994b;
+	border-left: 4px solid #4b994b;
+}
+.notify-blue {
+	padding: .2em .5em .3em 1em;
+	line-height: 1.4;
+	
+	background-color: #0a1023;
+	border: 1px solid #406ceb;
+	border-left: 4px solid #406ceb;
+}
+.notify-yellow {
+	padding: .2em .5em .3em 1em;
+	line-height: 1.4;
+	
+	background-color: #33300b;
+	border: 1px solid #e7dc32;
+	border-left: 4px solid #e7dc32;
+}
+.notify-normal {
+	padding: .2em .5em .3em 1em;
+	line-height: 1.4;
+	
+	background-color: #090909;
+	border: 1px solid #111;
+}
+
+/*
+|---------------------------------------------------------------
+| MISCELLANEOUS
+|---------------------------------------------------------------
+|
+| These are some random pieces that need to be here.
+|
+*/
+/** the bio image **/
+.bioImage {
+	float: right;
+	width: 20%;
+	padding: 0 2.5em 0 0;
+}
+
+/** post detail box **/
+.postDetails {
+	float: right;
+	width: 35%;
+	padding: 5px 1em 1em 1em;
+	margin: 0 0 1em 2em;
+	
+	border: 1px solid #111;
+	background-color: #090909;
+}
+
+/** PM headers in the inbox - might not need these any more **/
+.pmHeader {
+	width: 250px;
+	border-bottom: 1px solid #222;
+	margin-bottom: .5em;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+/*
+|---------------------------------------------------------------
+| ZEBRA TABLES
+|---------------------------------------------------------------
+|
+| There are two ways we're doing zebra tables at this point, so
+| both of these need to be here.
+|
+*/
+/** normal zebra tables **/
+.rowColor1 { background-color: #090909; }
+.rowColor2 { background-color: #000; }
+
+/** jQuery zebra tables **/
+tr.alt td { background: #090909; }
+tr.over td { background: #111; }
+
+/*
+|---------------------------------------------------------------
+| UNORDERED LISTS
+|---------------------------------------------------------------
+|
+| There are two different classes for ULs
+|
+*/
+ul.list-dark {
+	list-style-type: square;
+	color: #222;
+}
+ul.version { list-style-type: square; }
+
+/*
+|---------------------------------------------------------------
+| SPECIAL PADDINGS
+|---------------------------------------------------------------
+|
+| In a few places, we use different paddings. Unfortunately, some
+| of them are in the actually PHP files instead of here, but there
+| isn't much we can do about that now.
+|
+*/
+/** this padding is used on the mission summaries page **/
+.specialPadding1 { padding: 1em 0 1em 1em; }

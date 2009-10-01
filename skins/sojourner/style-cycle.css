@@ -1,0 +1,54 @@
+.cycle-content {
+	width: 960px;
+	height: 200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.cycle-inner {
+	width: 900px;
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+}
+
+.cycle-inner .cycle-container {  
+    width: 880px;
+    height: 180px;
+    top: 0;
+    left: 0;
+	padding: 10px 20px 10px 0;
+}
+
+.nav-link {
+	display: block;
+	height: 44px;
+	width: 30px;
+	margin-top: 76px;
+	
+	text-indent: -9000em;
+}
+.prev-link {
+	float: left;
+	
+	background: url('images/cycle-button-prev.png') no-repeat 0 0;
+}
+.prev-link:hover { background-position: 0 -44px; }
+.next-link {
+	float: right;
+	
+	background: url('images/cycle-button-next.png') no-repeat 0 0;
+}
+.next-link:hover { background-position: 0 -44px; }
+
+.cycle-1 { background: transparent url('images/cycle-1.jpg') no-repeat 0 0; }
+.cycle-2 { background: transparent url('images/cycle-2.jpg') no-repeat 0 0; }
+.cycle-3 { background: transparent url('images/cycle-3.jpg') no-repeat 0 0; }
+
+.cycle-1-content {
+	width: 300px;
+	float: right;
+	
+	text-align: right;
+}
+.cycle-1-content p { font-size: 90%; }

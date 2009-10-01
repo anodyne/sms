@@ -1,0 +1,104 @@
+Last Updated: 2008.04.28 0038 EST
+
+2.6
+CODENAME: Eclipse
+LAUNCH: Q2 2008
+=====
+
+#	Dynamic acceptance and rejection messages
+		*	Using a character (or two), an admin should be able to define where dynamic elements,
+			like position and rank, are added to the acceptance and rejection emails.
+#	Departmental databases
+#	Add CC ability for private messages
+		*	Should be able to add 5 CCs to their messages
+		*	Options for Command Staff, Senior Staff, and Entire Crew in the list
+#	Personalized SMS Menu
+#	Customizable message subject lines
+		*	Emails currently use [Ship Name], but users should be able to customize that
+		*	Default will be [Ship Name]
+#	Clean-up install and update files
+		*	Installation file should be made up of several smaller files to help keep initial
+			file size down. The different files should be structured accordingly:
+				@	Structure - all of the create table commands
+				@	Data - all of the data that needs to be put into the table
+		*	The update file should be broken up as well so that every single update file does
+			not need to be updated each time there is a release. Each release should have one
+			file and the main update file should be looping through to grab the files as needed
+		*	Character sets and collations need to be explicitly defined during install
+		*	What about update?
+#	Tab content immediately available
+		*	Current tab setup requires the page to be reloaded in order to view what's inside the
+			tab. Should be changed so that user can switch between content immediately.
+				@	http://www.dynamicdrive.com/dynamicindex17/tabcontent.htm
+				@	http://www.dynamicdrive.com/dynamicindex17/tabcontent2.htm
+				@	http://www.barelyfitz.com/projects/tabber/
+				@	http://livepipe.net/projects/control_tabs/ (requires Prototype)
+				@	http://loserbait.ulmb.com/digg/
+#	Global setting for default access levels
+#	Starbase menu items in place during install, but turned off
+		*	Unfortunately, there's no good way to dynamically turn the starship stuff off and
+			turn the starbase stuff on. The only way to do it would be to query for the URL
+			that's being used, turn off those items, then turn on the other ones, but I'm
+			not sure if we want to be going through all that trouble.
+#	Error catching page
+#	Rank drop down menus need to respect the rankDisplay flag
+#	Add cadet ranks (off by default)
+#	SMS Update options
+		*	Admins should be able to dictate exactly which updates they're notified of.
+				@	All Updates - notifies of all updates: major and minor
+				@	Major Only - notifies only of 2.x.0 releases and not of 2.x.x releases
+				@	No Updates - will turn off the notification system (users who choose
+					this option put themselves at risk in the event of a security release)
+#	"Private" news messages
+		*	People should be able to set news items as private, meaning that only registered
+			crew can see them, be that when they're logged in or not
+#	[BUG] Database uses integer fields for the crew compliment section, meaning that if a comma
+	is used, the query will strip everything from the invalid character on
+#	Toggle boxes should use jQuery instead of the custom Javascript code
+#	Logic on the awards page to check for the existence of the large version of the image, and
+	if it doesn't exist, fall back to the smaller version.
+#	Update system queries
+		*	System queries should be safe from SQL injection; see join page for example
+#	[BUG] Player stats page doesn't have any logic for a zero or blank UNIX timestamp
+#	Award categories
+		*	COs should be able to set categories for awards, much like they can set categories
+			for news items now
+		*	http://forums.anodyne-productions.com/viewtopic.php?t=1167
+		*	Option for whether it's an in character or out of character award
+		*	Will allow NPCs to be given IC awards
+#	Extra information on award
+		*	Timestamp
+		*	Reason
+		*	1,Timestamp:Reason; 2,Timestamp:Reason; etc.
+#	Nominated Awards To a Queue
+		*	When someone nominates another crew member for an award, it'll put it up for
+			approval, much like a new crew member that the CO can review and then approve
+			and not approve.  If approved, the award will be activated on the player's
+			account, otherwise, it'll be deleted
+#	Specifications and join pages to be dynamically built
+		*	Will use separate tables like the OKI LMI uses (formFields, formValues, formData)
+		*	Will allow admins to specify exactly what they want to see on those two
+			pages
+		*	Tough part will be the join page and getting things to be spit out in an email
+			the way they should be
+#	List all steps in installation and updating
+		*	All the steps should be listed with each step being highlighted as it's active
+#	Clean up icons included with SMS
+		*	Remove icons
+				@	update.png
+				@	warning.png
+				@	warning-large.png
+				@	update.png
+				@	fail.png
+				@	feed.png
+				@	launch.png
+				@	messages-unread.png
+				@	saved.png
+				@	notes.png
+		*	Update icons
+				@	combadge.jpg (should be PNG)
+				@	combadge-loa.jpg (should be PNG)
+				@	combadge-eloa.jpg (should be PNG)
+				@	combadge-npc.jpg (should be PNG)
+				@	add.png (gray + color)
+				@	remove.png (gray + color)

@@ -1,0 +1,191 @@
+/*
+|---------------------------------------------------------------
+| SMS CHANGED FILES
+|---------------------------------------------------------------
+|
+| List of all the changed files for SMS 2.6.x
+|
+| * = indicates file was updated
+| + = indicates file was added to SMS
+| - = indicates file was removed from SMS
+|
+*/
+
+|---------------------------------------------------------------
+| SMS 2.6.10
+|---------------------------------------------------------------
+
+* update.php
+* framework/functionsGlobal.php
+* framework/classMenu.php
+* install/resource_data.php
+* install/resource_structure.php
+* admin/manage/posts.php
+* pages/news.php
+
++ update/269.php
+
+|---------------------------------------------------------------
+| SMS 2.6.9
+|---------------------------------------------------------------
+
+* update.php
+* admin/manage/activate.php
+* admin/manage/database.php
+* framework/functionsGlobal.php
+* framework/classes/check.php
+* install/resource_data.php
+* pages/dockingrequest.php
+
++ update/268.php
+
+|---------------------------------------------------------------
+| SMS 2.6.8
+|---------------------------------------------------------------
+
+* install.php
+* update.php
+* admin/post/jp.php
+* admin/post/mission.php
+* admin/manage/access.php
+* admin/manage/accesslevels.php
+* admin/manage/add.php
+* admin/manage/activate.php
+* admin/manage/menus.php
+* admin/user/bio.php
+* framework/css/facebox.css
+* framework/functionsGlobal.php
+* framework/js/facebox.js
+* images/hud_close.png
+* install/resource_data.php
+* pages/bio.php
+* pages/departments.php
+
++ update/267.php
++ admin/ajax/bio_rank_change.php
+
+- images/hud_title.png
+- images/hud_bg.png
+- images/hud_tl.png
+- images/hud_tr.png
+- images/hud_bl.png
+- images/hud_br.png
+
+|---------------------------------------------------------------
+| SMS 2.6.7
+|---------------------------------------------------------------
+
+* pages/info.php
+* pages/join.php
+* pages/log.php
+* pages/mission.php
+* pages/missions.php
+* pages/news.php
+* pages/post.php
+* admin/main.php
+* admin/ajax/rank_add.php
+* admin/manage/missionnotes.php
+* admin/manage/missions.php
+* admin/manage/summaries.php
+* admin/manage/ranks.php
+* admin/post/jp.php
+* admin/post/mission.php
+* admin/user/bio.php
+* admin/user/nominate.php
+* install/resource_data.php
+* framework/functionsGlobal.php
+* update.php
+
++ update/266.php
+
+|---------------------------------------------------------------
+| SMS 2.6.6
+|---------------------------------------------------------------
+
+* pages/bio.php
+* pages/log.php
+* pages/manifest.php
+* pages/missions.php
+* pages/news.php
+* pages/post.php
+* admin/ajax/activate_user_accept.php
+* admin/manage/activate.php
+* admin/manage/add.php
+* admin/manage/posts.php
+* admin/user/bio.php
+* install/resource_data.php
+* framework/functionsGlobal.php
+* update.php
+
++ update/265.php
++ images/loader.gif
+
+|---------------------------------------------------------------
+| SMS 2.6.5
+|---------------------------------------------------------------
+
+* admin/user/nominate.php
+* install/resource_data.php
+* framework/functionsGlobal.php
+* update.php
+
++ update/264.php
+
+|---------------------------------------------------------------
+| SMS 2.6.4
+|---------------------------------------------------------------
+
+* admin/ajax/activate_user_accept.php
+* admin/manage/activate.php
+* admin/manage/add.php
+* admin/manage/access.php
+* admin/manage/accessall.php
+* admin/user/bio.php
+* admin/user/nominate.php
+* install/install.php
+* install/resource_data.php
+* framework/functionsGlobal.php
+* framework/session.name.php
+* update.php
+
++ update/263.php
+
+|---------------------------------------------------------------
+| SMS 2.6.3
+|---------------------------------------------------------------
+
+* update.php
+* images/ranks/default
+* admin/ajax
+* admin/manage/addaward.php
+* admin/manage/removeaward.php
+* admin/manage/activate.php
+* framework/functionsGlobal.php
+* framework/js/reflect.js
+* install/resource_data.php
+* pages/bio.php
+* pages/tour.php
+* skins/default/header.php
+* skins/cobalt/header.php
+
++ update/262.php
++ framework/session.name.php
+
+
+|---------------------------------------------------------------
+| SMS 2.6.2
+|---------------------------------------------------------------
+
+* admin/manage/activate.php
+* admin/manage/globals.php
+* admin/manage/database.php
+* admin/user/nominate.php
+* framework/functionsGlobal.php
+* framework/functionsUtility.php
+* pages/manifest.php
+* login.php
+* update.php
+* install/resource_data.php
+
++ update/261.php
++ changed_files.txt

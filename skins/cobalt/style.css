@@ -1,0 +1,214 @@
+/**
+This skin is the property of its owner and should not be duplicated or
+reproduced with the express written consent of the author. Edits to this skin
+are permissible if the original credits stay intact.
+
+Author: David VanScott [ davidv@anodyne-productions.com ]
+File: skins/cobalt/style.css
+Purpose: Stylesheet that controls the look and feel of the site
+
+Skin Version: 2.0
+Last Modified: 2008-06-22 1713 EST
+**/
+
+/*
+|---------------------------------------------------------------
+| INCLUDED STYLESHEETS
+|---------------------------------------------------------------
+|
+| The following stylsheets are required for the system to be displayed
+| properly.
+|
+*/
+@import url( "style-misc.css" );
+@import url( "style-login.css" );
+@import url( "style-ui.tabs.css" );
+@import url( "style-clickmenu.css" );
+
+/*
+|---------------------------------------------------------------
+| GLOBAL STYLES
+|---------------------------------------------------------------
+|
+| Styles that are global to the HTML or BODY
+|
+*/
+body {
+	margin: 0;
+	padding: 0;
+	
+	background-color: #000;
+	color: #fff;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 12px;
+}
+
+/*
+|---------------------------------------------------------------
+| CONTAINER STYLES
+|---------------------------------------------------------------
+|
+| The container holds the entire content of the site.
+|
+*/
+.wrapper {
+	width: 90%;
+	margin: auto;
+}
+
+/* the template header */
+#header {
+	width: 92%;
+	height: 80px;
+	margin: 1em auto;
+	
+	/* ### START EDIT ### */
+	/* background color of the header */
+	/* suggested colors:
+		
+		if you change this color, you'll still need to change
+		some other colors throughout the skin
+		
+		red - #701b23
+		green - #228720
+		blue - #4678cb
+	*/
+	background-color: #4678cb;
+	/* ### END EDIT ### */
+	
+	background-image: url('images/header_bg.png');
+	background-repeat: repeat-x;
+	background-position: top left;
+}
+#header .head {
+	height: 54px;
+	line-height: 52px;
+	
+	font-size: 200%;
+	font-weight: bold;
+}
+
+
+
+/*
+|---------------------------------------------------------------
+| MAIN NAVIGATION STYLES
+|---------------------------------------------------------------
+|
+| Styles controlling the main navigation of the system.
+|
+*/
+.mainNav {
+	height: 26px;
+	line-height: 26px;
+	margin: 0;
+	width: auto;
+}
+#nav-main {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	float: left; /* this makes sure that the drop down sits to the right of the main nav */
+}
+#nav-main li {
+	display: inline;
+	list-style: none;
+}
+/* makes sure the last LI has the right spacing */
+#nav-main li:last-child { padding-right: 1em; }
+#nav-main li.spacer { padding: 0 1em; }
+#nav-main li a {
+	font-weight: bold;
+	color: #fff;
+	padding: 0 2px;
+}
+#nav-main li a:hover {
+	/* ### START EDIT ### */
+	/* hover color of the main links */
+	color: #aec2e9;
+	/* ### END EDIT ### */
+	
+	border-bottom: 2px solid;
+}
+
+
+
+/*
+|---------------------------------------------------------------
+| CONTENT STYLES
+|---------------------------------------------------------------
+|
+| Styles that control the content layer of the system (includes
+| the body and side navigation as well)
+|
+*/
+#content {}
+
+/*
+|---------------------------------------------------------------
+| BODY STYLES
+|---------------------------------------------------------------
+|
+| Styles that control the body of the system (where all the content is held)
+|
+*/
+#content .body {
+	margin-right: 20%;
+	padding: 1em 0;
+}
+
+/*
+|---------------------------------------------------------------
+| SIDE NAVIGATION STYLES
+|---------------------------------------------------------------
+|
+| Styles that control the side navigation
+|
+*/
+#content .nav {
+	float: right;
+	width: 18%;
+	padding: 1.5em 0 1em 0;
+	
+	font-size: 95%;
+	text-align: right;
+}
+#content .nav ul {
+	display: block;
+	margin: 0;
+	padding: .5em .2em 1em 0;
+}
+#content .nav ul li { list-style-type: none; }
+#content .nav a { padding: 0 .5em 0 0; }
+
+/* part of the nav menu ... controls the login display */
+#content .nav .login a { padding: 0; }
+
+/* part of the nav menu ... controls the info below the menu */
+#content .nav .info { padding: 0 1em 0 2em; }
+#content .nav .info .fontLarge { margin: 0 -.5em 0 0; }
+#content .nav .info a { margin: 0 -.5em 0 0; }
+
+/*
+|---------------------------------------------------------------
+| FOOTER STYLES
+|---------------------------------------------------------------
+|
+| Styles that control the footer
+|
+*/
+#footer {
+	clear: both;
+	height: 25px;
+	line-height: 25px;
+	
+	background: #3860a2;
+	color: #fff;
+	text-align: center;
+	font-size: 80%;
+}
+#footer a {
+	color: #fff;
+	border-bottom: 1px dotted;
+}
+#footer a:hover { border-bottom: 1px solid; }

@@ -1,0 +1,90 @@
+Last updated: 2008.05.31 2123 EST
+
+NEW FEATURES
+===
+
+*	Private news items (can only be seen when logged in)
+*	Added the jQuery Javascript library
+*	Tabs now use jQuery, meaning the content is available immediately after clicking
+*	Added stardate script and the ability to turn it on and off (through site globals)
+*	Admins can now choose whether or not they want to be notified of SMS updates
+*	Admins can now set the email subject lines (default is [Ship Name])
+*	Acceptance and rejection messages now use wild card variables for dynamically inserting things like name, rank, positions, and ship name
+*	If a query fails, it'll display an SMS Error Report that someone can copy and paste to the forums
+*	Personalized menus
+*	NPCs can now be given in character awards
+*	Departmental databases
+*	Completely new install process that's clearer and with much better instructions
+*	Users (with proper permissions) can edit their own mission posts (except which mission the post is in and the post status)
+*	Users (with proper permissions) can edit their own personal logs (except the author and log status)
+*	Admins can now set the defaults for the various access levels (CO, XO, Department Head, Standard Player)
+*	Players can now put more than one image in their bio and they'll be displayed as a mini-gallery like the tour item pictures
+*	SMS now automatically detects your web location variable
+
+ENHANCEMENTS
+===
+
+*	Award nominations are now sent to a queue for approval by an admin
+*	Completely rewrote activation page
+*	Awards now include the award given, when it was given, and the reason
+*	Completely new manifest page using jQuery
+*	Completely new departments page using jQuery for toggling
+*	Site options page now uses tabs to better organize everything
+*	Combadge images on the manifest are now PNGs to match with any background color
+*	Add and remove icons now have an off and over state
+*	Added function for escaping strings before they're entered into the database
+*	Added logic to check for the existence of the large award image and if it fails, fall back to the smaller version of the image
+*	Notifications are now less obtrusive and provide more instant feedback
+*	Made the pending checks smarter
+*	Cleaned up the inbox including tabs (with unread count) and moving the compose PM into the inbox
+*	Inbox now has a select all/deselect all option
+*	Added dynamic image reflection to the tour images
+*	All images now have a class so that a skin can style images differently if they want
+*	When viewing NPCs' bios, it won't show the Posting Activity sections
+*	SMS now uses some PHP constants to give functions access to things like web location and ship name
+*	Awards now have categories of in character, out of character, and both
+*	Error page when someone tries to go to a page that doesn't exist
+*	Added a lightbox to the tour images to make a mini gallery
+*	Replying to a private message will show the content of the message you're replying to below the compose box
+*	A ton of commenting in the default skin to (hopefully) help out people who are trying to create their own skins
+*	SMS now uses AXAH (Asynchronous XHTML and HTTP) for creating, editing, and deleting some items (menu items, departments, activations, ranks, positions, crew awards, tour items, missions, giving/removing awards to crew, user post moderation, and docked ships)
+*	Consolidated menu management into a single page instead of two
+*	Removed unused images
+*	Adding system plugins to the About SMS page
+*	Updated the framework structure
+*	Default skin now uses some fancy dynamic location stuff so that the code could be moved to another directory and keep working
+*	Default skin now uses UTF-8 for character encoding and English as the language by default
+*	Version history page now uses tabs
+*	Management pages for posts, logs, and news items now use tabs to separate activated, saved, and pending entries, plus it lists entries instead of providing "mini editing"
+*	Got rid of the confusing CLASS field in rank management, replacing it with a drop-down of the class groups to make it a little more self-explanatory
+*	Re-wrote page for setting access levels for entire crew to make it better (it just plain sucked before)
+*	Gave the starbase-specific pages a little love to bring them more in line with the rest of the system
+*	The bio page now displays awards from the most recent down instead of the oldest first
+*	Rewrote the user moderation page to be more secure
+*	Ranks now have short names (CAPT instead of Captain) that are used in emails to shorten the FROM field
+
+FIXES
+===
+
+*	Fixed bug where rank menus didn't respect the rankDisplay flag
+*	Fixed bug where the system check class would try to write something to the main ACP even if there was nothing to write, causing an extra space
+*	Fixed bug where crew compliment fields would only allow integers (commas would break things)
+*	Fixed bug where player stats page would throw back some weird data if there wasn't a properly formatted join date
+*	Fixed bug where changing a playing character to something else (or vice versa) wouldn't affect the open positions
+*	Fixed bug where contact page wouldn't send mail out
+*	Fixed bug where the read more prompts in the control panel could break right in the middle
+*	Fixed all the Apache warnings and errors SMS would dump into the server error logs (will make server admins VERY happy)
+*	Fixed bug where the crew awards page would, in some situations, print the award name twice
+*	Fixed bug where someone with full XO privileges could create a CO character (thought without the CO access levels)
+*	Fixed bug where mission status wasn't inserted into the database
+*	Fixed bug in the 2.4.4 update script where a semicolon was missing
+*	Fixed bug where reset password form wouldn't send the email out to the appropriate person (or update it in the database either)
+*	Fixed bug where mission order wouldn't be updated
+*	Fixed bug that would allow pending, inactive, and NPC characters to log in
+*	Removed unused System Catalogues item from access levels management
+*	Removed unused Skin Development item from access levels management
+*	Removed unnecessary access checks on the admin subsection pages
+*	Worked around Webkit bug where post edit icon wouldn't show up
+*	Fixed bug where using the delete link for an individual news item (on the news item page) wouldn't do anything at all
+*	Fixed join page bug where height, weight, physical description, personality overview, and real name weren't be inserted into the database
+*	Fixed bug where admins could put a pound sign in the department color field and break the color system

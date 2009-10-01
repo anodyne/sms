@@ -1,0 +1,198 @@
+/**
+This skin may not be duplicated or reproduced in any manner and
+is the sole property of David VanScott and the USS Nimitz RPG.
+Any violations of this will be met with the harshest of legal
+consequences.
+
+Author: David VanScott [ davidv@anodyne-productions.com ]
+File: skins/sojourner/style.css
+**/
+
+/*
+|---------------------------------------------------------------
+| INCLUDED STYLESHEETS
+|---------------------------------------------------------------
+|
+| The following stylsheets are required for the system to be displayed
+| properly.
+|
+*/
+@import url( "style-misc.css" );
+@import url( "style-login.css" );
+@import url( "style-ui.tabs.css" );
+@import url( "style-clickmenu.css" );
+@import url('style-cycle.css');
+@import url('style-panel.css');
+@import url('style-sfmenu.css');
+
+/*
+|---------------------------------------------------------------
+| GLOBAL STYLES
+|---------------------------------------------------------------
+|
+| Styles that are global to the HTML or BODY
+|
+*/
+body {
+	margin: 0;
+	padding: 0;
+	
+	background: #000;
+	color: #ddd;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 13px;
+}
+
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+/*
+|---------------------------------------------------------------
+| CONTAINER STYLES
+|---------------------------------------------------------------
+|
+| The container holds the entire content of the site.
+|
+*/
+#container {}
+
+#header {}
+
+#subhead {
+	background: #111;
+	border-bottom: 1px solid #222;
+}
+
+/*
+|---------------------------------------------------------------
+| MAIN NAVIGATION STYLES
+|---------------------------------------------------------------
+|
+| Styles controlling the main navigation of the system.
+|
+*/
+.mainNav {
+	height: 40px;
+	line-height: 40px;
+	width: auto;
+	
+	background: #f3b907 url('images/nav-bg.png') repeat-x 0 0;
+}
+#nav-main {
+	margin: 0;
+	padding: 0;
+	width: auto;
+	
+	list-style: none;
+}
+#nav-main li {
+	display: block;
+	margin: 0 2px;
+	
+	text-transform: lowercase;
+}
+#nav-main li a {
+	display: block;
+	padding: 0 1em;
+	
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+}
+#nav-main li a:hover {
+	background: #f3d16b url('images/nav-hover-bg.png') repeat-x 0 0;
+	color: #363636;
+}
+#nav-main li a.active {
+	background: #1b6cae url('images/nav-hover-bg.png') repeat-x 0 0;
+	border-left: 1px solid #0e395c;
+	border-right: 1px solid #0e395c;
+	color: #eee;
+	
+	height: 40px;
+}
+#nav-main li.spacer {
+	height: 10px !important;
+	line-height: 1;
+}
+
+/*
+|---------------------------------------------------------------
+| CONTENT STYLES
+|---------------------------------------------------------------
+|
+| Styles that control the content layer of the system (includes
+| the body and side navigation as well)
+|
+*/
+#container .content {}
+
+/*
+|---------------------------------------------------------------
+| BODY STYLES
+|---------------------------------------------------------------
+|
+| Styles that control the body of the system (where all the content is held)
+|
+*/
+#container .content .body { padding: 1em 0; }
+
+/*
+|---------------------------------------------------------------
+| SIDE NAVIGATION STYLES
+|---------------------------------------------------------------
+|
+| Styles that control the side navigation
+|
+*/
+#container .content .nav {
+	float: right;
+	width: 18%;
+	padding: 1.5em 0 1em 0;
+	
+	font-size: 95%;
+	text-align: right;
+}
+#container .content .nav ul {
+	display: block;
+	margin: 0;
+	padding: .5em .2em 1em 0;
+}
+#container .content .nav ul li { list-style-type: none; }
+#container .content .nav a { padding: 0 .5em 0 0; }
+
+/* part of the nav menu ... controls the login display */
+#container .content .nav .login a { padding: 0; }
+
+/* part of the nav menu ... controls the info below the menu */
+#container .content .nav .info { padding: 0 1em 0 2em; }
+#container .content .nav .info .fontLarge { margin: 0 -.5em 0 0; }
+#container .content .nav .info a { margin: 0 -.5em 0 0; }
+
+/*
+|---------------------------------------------------------------
+| FOOTER STYLES
+|---------------------------------------------------------------
+|
+| Styles that control the footer
+|
+*/
+#container .footer {
+	clear: both;
+	height: 25px;
+	line-height: 25px;
+	margin: 2em 0;
+	
+	color: #333;
+	text-align: center;
+	font-size: 80%;
+}
+#container .footer a {
+	color: #555;
+	border-bottom: 1px solid;
+}
+#container .footer a:hover { border-bottom: 1px transparent; }

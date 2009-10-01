@@ -1,0 +1,100 @@
+<h3>PLEASE READ THIS DOCUMENT IN ITS ENTIRETY BEFORE ATTEMPTING TO INSTALL SMS!  IF YOU DO NOT UNDERSTAND PART OF THIS DOCUMENT OR HAVE QUESTIONS, PLEASE ASK THEM IN THE ANODYNE SUPPORT FORUM BEFORE ATTEMPTING TO INSTALL.</h3>
+
+<h3>The Anodyne Support Forum can be found at: http://forums.anodyne-productions.com/</h3>
+
+<h4>Requirements</h4>
+
+<p>PHP 4.3.2+<br />
+MySQL 3+<br />
+Apache recommended, but should run on any PHP supported web server<br />
+Server running OS X, Linux, or UNIX (using a Windows server is not recommended)</p>
+
+<p>If you are new to PHP or website management, you cannot run this system (the files and folders contained within the zip file you just downloaded) on your own, local machine.  You must have a hosting provider with the above requirements to install and use SMS.</p>
+
+<h4>For Reference</h4>
+
+<p>We want to make sure that our language in this readme is as clear as we can make it.  To that end, please make sure you read and understand the following terms:<br />
+
+<b>Directory</b> - same concept as a folder except that directories usually refer to folders on a server.  In this document, use of directory is exclusive to the server SMS is installed on.</p>
+
+<h4>Troubleshooting</h4>
+
+<p>If while using SMS you come to a page that doesn't display anything even though it should, open the page referenced in the URL.  If you were having this issue with all reports page, open reports.php inside /admin with WordPad, save it, then reupload it.  The same issue has been reported with the install page as well.  Windows has an inherent flaw in handling line breaks.  We apologize for this, but unfortunately, there is nothing we can do about it.</p>
+
+<h4>Fresh Install Guide</h4>
+
+<p>SMS uses a user-friendly, web-based installation script.</p>
+
+<ol>
+	<li>Make sure you have a database set up within MySQL to house the SMS tables.</li>
+	<li>Upload the entire system (the files and folders contained within the zip file) to your hosting provider</li>
+	<li>Go to http://< yoursite >/< pathtosms >/install.php in your browser.</li>
+	<li>Click the fresh install banner.</li>
+	<li>Supply your MySQL username, password, database name, and error message (if you're unsure about the details, please contact your hosting provider)</li>
+		<ul>
+			<li>Your host should have provided this information when you signed up your account. Possibly by email. There may be further information on your provider's website regarding MySQL connections.</li>
+		</ul>
+	<li>If the variables file was successfully written, it will display a success message.  On some servers, however, for security reasons, some of the necessary PHP functions are turned off.  If this is the case for your server, it will display the code that you will need to copy and paste into the file variables.php 	located in the directory framework.  Once the file is written or you are done copying, pasting and saving, you can continue to the next step.</li>
+	<li>Supply the information for your character on the simm and the character with which you'll administer SMS.  Make sure to remember your username and password.</li>
+	<li>Fill in the ship name and registry before continuing to the final step of the installation.</li>
+	<li>Once the installer is done, you can log in to your site using the username and password you created.</li>
+	<li>Once installed, delete install.php and the folder install as running it multiple times can cause problems with your SMS installation.</li>
+</ol>
+
+<h4>Update Guide</h4>
+
+<p>You must be running SMS 2.3.0 in order to upgrade to SMS 2.5.x.  Please note that from here on out, the minimum requirement to update to the latest version will be SMS 2.3.0 regardless of what version you are trying to go to.  (If you're unsure what version of SMS you're running, open your SMS site, scroll to the bottom of the page, and you'll find a number at the bottom.  That is your version number.)  If you are not running one of these versions, you will need to do all the updates prior to attempting to upgrade to SMS 2.5.x which can be found on the Anodyne site (http://www.anodyne-productions.com/).  If you do not do this, your version of SMS may not work properly.  Please Note: That before upgrading we heavily recommend you do a full backup of your database and existing SMS source files! If you are unsure how to achieve this please ask your hosting provider for advice.</p>
+
+<p>Our new approach to updating is one of greater simplicity.  We are now including all core files in the update archive.  This allows users, after SMS 2.3.0, to not have the latest version installed and still be able to make the jump across several versions if necessary.</p>
+
+<p>The update process is just like previous versions:</p>
+
+<ol>
+	<li>Open a folder (we will use /pages as an example here)</li>
+	<li>Open the corresponding directory on your server (/pages on your server)</li>
+	<li>Select all the files in the folder (on your computer)</li>
+	<li>Upload them to your server</li>
+</ol>
+
+<p>Once one folder finishes updating, move on to the next folder, moving through the folders until you have updated all the files.  If you've created new files, this will ensure that those files stay intact while updating the rest of your system files.</p>
+
+<p>When updating the framework folder, do not overwrite variables.php!</p>
+
+<h4>Rank Updates</h4>
+
+<p>If you are already running SMS 2.5, this step is not necessary, otherwise, please continue!</p>
+
+<p>We've standardized the use of ranks across the system in the hopes of adding a more robust control system for skins and ranks in future versions of SMS.  This release lays the initial groundwork.  As such, you will need to re-download all your rank sets from the Anodyne site and upload them to your server again.  We apologize for this inconvenience.</p>
+
+<h4>Skin Updates</h4>
+
+<p>If you are already running SMS 2.5, this step is not necessary, otherwise, please continue!</p>
+
+<p>Because of various changes to the skinning system used by SMS and the addition of more graphical elements, all your skins will have to be converted before they can properly be used.  A skin conversion guide is available through Anodyne's online documentation (http://docs.anodyne-productions.com/). The update will reset all user and system preferences for skins and ranks. They can be reset again once you've updated successfully.</p>
+
+<h4>Finishing the Update</h4>
+
+<p><strong>If you are running SMS 2.5:</strong></p>
+
+<p>One you have finished uploading the files to your server:</p>
+
+<ol>
+	<li>Open your web browser</li>
+	<li>Navigate to your SMS site and login</li>
+	<li>You will see an update notification ... click on the link and your update will run</li>
+</ol>
+
+<p><strong>If you are running SMS 2.4.4 or earlier:</strong></p>
+
+<p>One you have finished uploading the files to your server:</p>
+
+<ol>
+	<li>Open your web browser</li>
+	<li>Navigate to your SMS site</li>
+	<li>You will be kicked over to the install page</li>
+	<li>Click on the link to run the update</li>
+</ol>
+
+<p>Once the update is complete, make sure you delete the info.php file, but do not delete update.php as it will be used in future versions!</p>
+
+<p>Congratulations, SMS 2.6 has been installed and is ready to use. You can now view your site, login and start building your site!</p>
