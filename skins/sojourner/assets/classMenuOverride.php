@@ -1,7 +1,7 @@
 <?php
 
-class MenuOverride extends Menu
-{
+class MenuOverride extends Menu {
+	
 	var $skin;
 	var $pages = array(
 		'main' => array('contact', 'credits', 'join', 'main', 'news'),
@@ -333,7 +333,4 @@ class MenuOverride extends Menu
 		
 		return FALSE;
 	}
-	
 }
-
-?>
