@@ -167,18 +167,24 @@ $unreadImage = '<img src="skins/sojourner/images/'. $unreadIcon .'.png" border="
 				<div class="cycle-container cycle-2">
 					<div class="cycle-1-content">
 						<h2>Backstory</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						<h3><a href="#">Read the backstory &raquo;</a></h3>
+						<p>Twelve years after finding a derelict alien vessel with incredible speed floating in an astroid field, Starfleet decides to put a daring crew on the ship and put the vessel through its paces, despite the incredible danger it could pose to the crew.</p>
+						<h3><a href="<?php echo $webLocation;?>index.php?page=database&entry=33">Read the backstory &raquo;</a></h3>
 					</div>
 				</div>
 				<div class="cycle-container cycle-3">
 					<div class="cycle-1-content">
 						<h2>Join Today</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						<h3><a href="#">Join now &raquo;</a></h3>
+						<p>The crew of the <em>USS Sojourner</em> have answered the call and find themselves on the edge of known space facing new and unknown dangers and boldly going where no one has gone before. Will you answer the call?</p>
+						<h3><a href="<?php echo $webLocation;?>index.php?page=join">Join now &raquo;</a></h3>
 					</div>
 				</div>
-				<div class="cycle-container">Mission Archives</div>
+				<div class="cycle-container cycle-4">
+					<div class="cycle-1-content">
+						<h2>Mission Archives</h2>
+						<p>Over the years, the crew of the <em>Sojourner</em> and <em>Nimitz</em> have embarked on some incredible adventures that are documented only here. Check out the archives and all their exciting missions!</p>
+						<h3><a href="<?php echo $webLocation;?>index.php?page=missions">See the archives &raquo;</a></h3>
+					</div>
+				</div>
 			</div>
 		</div>
 	<?php else: ?>
