@@ -162,7 +162,11 @@ body {
 	margin: 0;
 	padding: .5em .2em 1em 0;
 }
-#container .content .nav ul li { list-style-type: none; }
+#container .content .nav ul li {
+	margin: 0 0 2px 0;
+	
+	list-style-type: none;
+}
 #container .content .nav a { padding: 0 .5em 0 0; }
 
 /* part of the nav menu ... controls the login display */

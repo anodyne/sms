@@ -50,12 +50,12 @@ Last Modified: 2008-05-20 1931 EST
 }
 .ui-tabs-nav li {
     float: left;
-    margin: 0 2px 0 0;
+    margin: 0 6px 0 0;
     min-width: 84px; /* be nice to Opera */
 }
 .ui-tabs-nav a, .ui-tabs-nav a span {
     display: block;
-    padding: 0 10px;
+    padding: 2px 20px;
     /* background: url(tab.png) no-repeat; */
 }
 .ui-tabs-nav a {
@@ -63,33 +63,35 @@ Last Modified: 2008-05-20 1931 EST
     /* top: 1px; */
     z-index: 2;
     padding-left: 0;
-    color: #648295;
-    font-size: 11px;
+    color: #777;
+    font-size: 12px;
     font-weight: bold;
-    line-height: 1.2;
+    line-height: 1.4;
     text-align: center;
     text-decoration: none;
-    white-space: nowrap; /* required in IE 6 */    
+    white-space: nowrap; /* required in IE 6 */
+	background-color: #191919;
+
+	-moz-border-radius: 12px 3px;
 }
-.ui-tabs-nav .ui-tabs-selected {
-	background-color: #0d0d0d;
-}
+.ui-tabs-nav .ui-tabs-selected { -moz-border-radius: 5px; }
 .ui-tabs-nav .ui-tabs-selected a {
     color: #fff;
     background-position: 100% -150px;
     outline: 0; /* prevent dotted border in Firefox */
+	background: #1b6cae url('images/nav-bg.png') repeat-x center left;
 }
 .ui-tabs-nav .ui-tabs-selected a:hover {
     color: #fff;
     background-position: 100% -150px;
     outline: 0; /* prevent dotted border in Firefox */
-    background-color: #0d0d0d;
+	background: #1b6cae url('images/nav-bg.png') repeat-x center left;
 }
 .ui-tabs-nav a:hover, .ui-tabs-nav a:focus, .ui-tabs-nav a:active {
     background-position: 100% -150px;
     outline: 0; /* prevent dotted border in Firefox */
-    color: #aad1e9;
-    background-color: #0d0d0d;
+    color: #111;
+    background: #f3b907 url('images/nav-bg.png') repeat-x center left;
 }
 
 .ui-tabs-disabled a {
@@ -140,7 +142,8 @@ Last Modified: 2008-05-20 1931 EST
     /* opacity: .4; */
 }
 .ui-tabs-container {
-    border-top: 1px solid #111;
+    border-top: 1px solid #191919;
+	margin: .5em 0 0 0;
     padding: 1em 8px;
     background: #000; /* declare background color for container to avoid distorted fonts in IE while fading */
 	clear: left;

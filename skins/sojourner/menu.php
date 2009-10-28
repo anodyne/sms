@@ -32,11 +32,11 @@ $page = (isset($_GET['page'])) ? $_GET['page'] : 'main';
 		$('ul.sf-menu').superfish();
 		
 		$('#cycle').cycle({ 
-		    fx:     'fade', 
-		    speed:  'slow', 
-		    timeout: 0, 
-		    next:   '#next', 
-		    prev:   '#prev' 
+		    fx:     	'fade', 
+		    speed: 		1000,
+		    timeout: 	10000, 
+		    next:   	'#next', 
+		    prev:   	'#prev' 
 		});
 		
 		$('a#userpanel').toggle(function(){
@@ -96,24 +96,23 @@ $unreadImage = '<img src="skins/sojourner/images/'. $unreadIcon .'.png" border="
 				<table class="table100">
 					<tbody>
 						<tr>
-							<td class="panel_1 align-top"><h4><? printCrewName( $sessionCrewid, "rank", "noLink" ); ?></h4>
+							<td class="panel_1 align-top"><h4>My Dashboard</h4>
 								<ul class="none">
 									<li><a href="<?php echo $webLocation;?>admin.php?page=user&sub=account&crew=<?php echo $sessionCrewid;?>">Edit Account</a></li>
-									<li><a href="http://localhost/nova/trunk/index.php/user/preferences">Edit Preferences</a></li>
-									<li><a href="http://localhost/nova/trunk/index.php/user/status">Request LOA</a></li>
-									<li><a href="http://localhost/nova/trunk/index.php/messages/index">Private Messages</a></li>
+									<li><a href="<?php echo $webLocation;?>admin.php?page=user&sub=status">Request LOA</a></li>
+									<li><a href="<?php echo $webLocation;?>admin.php?page=user&sub=inbox">Private Messages</a></li>
 									
 									<li><a href="<?php echo $webLocation;?>login.php?action=logout"><span>Logout</span></a></li>
 								</ul>
 							</td>
 							<td class="panel_spacer"></td>
 							<td class="panel_2 align-top">
-								<h4>Characters</h4>
+								<h4>Character</h4>
 								<ul class="none">
 									<li>
-										<a href="http://localhost/nova/trunk/index.php/personnel/character/7">Major Alex Diaz</a> 
+										<? printCrewName( $sessionCrewid, "rank", "link" ); ?>
 										&nbsp;&nbsp;
-										<a href="http://localhost/nova/trunk/index.php/#" class="edit">[ Edit ]</a>
+										<a href="<?php echo $webLocation;?>admin.php?page=user&sub=bio&crew=<?php echo $sessionCrewid;?>" class="edit">[ Edit ]</a>
 									</li>
 								</ul>
 							</td>
@@ -153,8 +152,8 @@ $unreadImage = '<img src="skins/sojourner/images/'. $unreadIcon .'.png" border="
 	</div>
 </div>
 
-<div id="subhead">
-	<?php if ($name == 'index.php'): ?>
+<?php if ($name == 'index.php'): ?>
+	<div id="subhead">
 		<div class="cycle-content">
 			<div class="cycle-nav">
 				<a href="#" id="prev" class="nav-link prev-link">Prev</a>
@@ -187,10 +186,10 @@ $unreadImage = '<img src="skins/sojourner/images/'. $unreadIcon .'.png" border="
 				</div>
 			</div>
 		</div>
-	<?php else: ?>
-	
-	<?php endif;?>
-</div>
+	</div>
+<?php else: ?>
+	<p></p>
+<?php endif;?>
 
 <div id="container" class="wrapper">
 	<div class="content">

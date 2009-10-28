@@ -22,13 +22,13 @@ Last Modified: 2008-06-15 1459 EST
 */
 a {
 	text-decoration: none;
-	color: #648295;
+	color: #1b6cae;
 }
-a:hover { color: #aad1e9; }
+a:hover { color: #f3b907; }
 
 /** delete **/
 a.delete { text-decoration: none; }
-a:hover.delete { color: #cc0000; }
+a:hover.delete { color: #c00; }
 
 /** edit **/
 a.edit { text-decoration: none; }
@@ -193,8 +193,8 @@ table.images { width: auto; }
 	border: 1px solid #e99e1c;
 	border-left: 4px solid #e99e1c;
 	
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
+	-moz-border-radius: 9px 4px 4px 9px;
+	-webkit-border-radius: 9px 4px 4px 9px;
 }
 .notify-red {
 	padding: .2em .5em .3em 1em;
@@ -204,8 +204,8 @@ table.images { width: auto; }
 	border: 1px solid #9c2c2c;
 	border-left: 4px solid #9c2c2c;
 	
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
+	-moz-border-radius: 9px 4px 4px 9px;
+	-webkit-border-radius: 9px 4px 4px 9px;
 }
 .notify-green {
 	padding: .2em .5em .3em 1em;
@@ -215,8 +215,8 @@ table.images { width: auto; }
 	border: 1px solid #4b994b;
 	border-left: 4px solid #4b994b;
 	
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
+	-moz-border-radius: 9px 4px 4px 9px;
+	-webkit-border-radius: 9px 4px 4px 9px;
 }
 .notify-blue {
 	padding: .2em .5em .3em 1em;
@@ -226,8 +226,8 @@ table.images { width: auto; }
 	border: 1px solid #406ceb;
 	border-left: 4px solid #406ceb;
 	
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
+	-moz-border-radius: 9px 4px 4px 9px;
+	-webkit-border-radius: 9px 4px 4px 9px;
 }
 .notify-yellow {
 	padding: .2em .5em .3em 1em;
@@ -237,15 +237,15 @@ table.images { width: auto; }
 	border: 1px solid #e7dc32;
 	border-left: 4px solid #e7dc32;
 	
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
+	-moz-border-radius: 9px 4px 4px 9px;
+	-webkit-border-radius: 9px 4px 4px 9px;
 }
 .notify-normal {
 	padding: .2em .5em .3em 1em;
 	line-height: 1.4;
 	
-	background-color: #090909;
-	border: 1px solid #111;
+	background-color: #111;
+	border: 1px solid #222;
 	
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
