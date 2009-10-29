@@ -18,9 +18,11 @@
 * update.php
 * framework/functionsGlobal.php
 * framework/classMenu.php
+* install/install.php
 * install/resource_data.php
 * install/resource_structure.php
 * admin/manage/posts.php
+* admin/user/inbox.php
 * pages/news.php
 
 + update/269.php
