@@ -273,8 +273,11 @@ table.images { width: auto; }
 	padding: 5px 1em 1em 1em;
 	margin: 0 0 1em 2em;
 	
-	border: 1px solid #111;
-	background-color: #090909;
+	border: 1px solid #222;
+	background-color: #111;
+	
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
 }
 
 /** PM headers in the inbox - might not need these any more **/
@@ -296,11 +299,11 @@ table.images { width: auto; }
 |
 */
 /** normal zebra tables **/
-.rowColor1 { background-color: #090909; }
+.rowColor1 { background-color: #111; }
 .rowColor2 { background-color: #000; }
 
 /** jQuery zebra tables **/
-tr.alt td { background: #090909; }
+tr.alt td { background: #111; }
 tr.over td { background: #111; }
 
 /*
