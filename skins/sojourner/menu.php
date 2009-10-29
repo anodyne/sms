@@ -36,7 +36,8 @@ $page = (isset($_GET['page'])) ? $_GET['page'] : 'main';
 		    speed: 		1000,
 		    timeout: 	10000, 
 		    next:   	'#next', 
-		    prev:   	'#prev' 
+		    prev:   	'#prev',
+			pause: 		1
 		});
 		
 		$('a#userpanel').toggle(function(){
