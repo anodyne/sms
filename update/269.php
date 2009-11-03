@@ -28,6 +28,6 @@ mysql_query("ALTER TABLE `sms_posts` CHANGE `postAuthor` `postAuthor` text NOT N
 | for this release.
 |
 */
-mysql_query("INSERT INTO sms_system_versions ( `version`, `versionDate`, `versionShortDesc`, `versionDesc` ) VALUES ('2.6.10', '', 'This release fixes bugs with ...', 'Fixed bug on news page where selecting a category would narrow down news but the category listed next to each news item wouldn't be accurate;Fixed bug in menu class where setting a general menu item to require login wouldn't allow anyone to see the link, logged in or not;Fixed bug where mission posts wouldn't be deleted when the delete action was triggered from the manage posts page;Fixed bug where post tags couldn't be updated from the Edit Mission Post page)");
+mysql_query("INSERT INTO sms_system_versions ( `version`, `versionDate`, `versionShortDesc`, `versionDesc` ) VALUES ('2.6.10', '', 'This release fixes bugs with ...', 'Fixed bug on news page where selecting a category would narrow down news but the category listed next to each news item wouldn\'t be accurate;Fixed bug in menu class where setting a general menu item to require login wouldn\'t allow anyone to see the link, logged in or not;Fixed bug where mission posts wouldn\'t be deleted when the delete action was triggered from the manage posts page;Fixed bug where post tags couldn\'t be updated from the Edit Mission Post page')");
 
 ?>
