@@ -88,9 +88,7 @@ switch($step)
 \$dbName = \"$_POST[dbName]\";
 \$dbUser = \"$_POST[dbUser]\";
 \$dbPassword = \"$_POST[dbPassword]\";
-\$dbErrorMessage = \"$dbErrorMessage\";
-
-?>";
+\$dbErrorMessage = \"$dbErrorMessage\";";
 
 		if(!isset($varError))
 		{
@@ -630,9 +628,7 @@ $installSteps = array(
 				$dbName = "<?php echo $_SESSION['dbName'];?>";<br />
 				$dbUser = "<?php echo $_SESSION['dbUser'];?>";<br />
 				$dbPassword = "<?php echo $_SESSION['dbPassword'];?>";<br />
-				$dbErrorMessage = "<?php echo $_SESSION['dbErrorMessage'];?>";<br /><br />
-				
-				<?php print( htmlentities( '?>' ) ); ?>
+				$dbErrorMessage = "<?php echo $_SESSION['dbErrorMessage'];?>";
 			</div>
 			<br />
 			
