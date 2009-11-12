@@ -22,6 +22,7 @@
 * install/resource_data.php
 * install/resource_structure.php
 * admin/manage/posts.php
+* admin/reports/count.php
 * admin/user/inbox.php
 * pages/news.php
 
