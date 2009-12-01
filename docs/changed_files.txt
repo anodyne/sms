@@ -24,6 +24,7 @@
 * admin/manage/posts.php
 * admin/reports/count.php
 * admin/user/inbox.php
+* pages/contact.php
 * pages/news.php
 
 + update/269.php
