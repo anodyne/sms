@@ -9,8 +9,8 @@ Author: Nathan Wharry [ mail@herschwolf.net ]
 File: pages/contact.php
 Purpose: Page used to contact the CO, XO, or Webmaster of a simm for any user
 
-System Version: 2.6.1
-Last Modified: 2008-08-16 1734 EST
+System Version: 2.6.10
+Last Modified: 2009-12-01 1416 EST
 **/
 
 /* define the page class and set the vars */
@@ -32,49 +32,52 @@ if( isset( $sessionCrewid ) ) {
 }
 
 /* check action and send email if needed */
-if ( isset( $send ) ) {
-
+if (isset($send))
+{
 	/* strip the slashes */
 	$message = stripslashes( $_POST['message'] );
 	$subject = stripslashes( $_POST['subject'] );
 	$from = $_POST['email'];
 	$recipients = $_POST['recipients'];
+	$spam = $_POST['check_field'];
+	
+	if (empty($spam))
+	{ /* only send the email if the spam field is blank */
+		if (!empty($subject))
+		{ /* define the subject */
+		    $subject = $emailSubject . " " . $subject . "";
+		} else {
+		    $subject = $emailSubject . " Information Request";
+		}
 		
-	/* define the subject */
-	if(!empty($subject)) {
-	    $subject = $emailSubject . " " . $subject . "";
-	} else {
-	    $subject = $emailSubject . " Information Request";
-	}
-	
-	/* figure out who to send the email to */
-	switch($recipients)
-	{
-		case 'coNxo':
-			$to = printCOEmail() . ", " . printXOEmail();
-			break;
-		case 'co':
-			$to = printCOEmail();
-			break;
-		case 'webmaster':
-			$to = $webmasterEmail;
-			break;
-		default:
-			$to = printCOEmail();
-	}
-	
-	/* set action variable */
-	$action = "send";
-	$query = "query";
-	
-	/* send email if message contains something */
-	if( $message > "" ) { 
-		$result = "true";
+		switch ($recipients)
+		{ /* figure out who to send the email to */
+			case 'coNxo':
+				$to = printCOEmail() . ", " . printXOEmail();
+				break;
+			case 'co':
+				$to = printCOEmail();
+				break;
+			case 'webmaster':
+				$to = $webmasterEmail;
+				break;
+			default:
+				$to = printCOEmail();
+		}
 		
-		/* send the email */
-		mail ( $to, $subject, $message, "From: " . $from . "\nX-Mailer: PHP/" . phpversion() );
+		/* set action variable */
+		$action = "send";
+		$query = "query";
+		
+		/* send email if message contains something */
+		if ($message > "")
+		{
+			$result = "true";
+			
+			/* send the email */
+			mail ( $to, $subject, $message, "From: " . $from . "\nX-Mailer: PHP/" . phpversion() );
+		}
 	}
-	
 } /* end action/send if statement */
 	
 ?>
@@ -152,7 +155,9 @@ if ( isset( $send ) ) {
 			<td><textarea name="message" class="desc" rows="10"></textarea></td>
 		</tr>
 		<tr>
-			<td colspan="3" height="15"></td>
+			<td colspan="3" height="15">
+				<input type="text" style="border: 1px solid transparent; background: transparent; color: transparent;" tabindex="500" name="check_field" value="" />
+			</td>
 		</tr>
 		<tr>
 			<td colspan="2"></td>
