@@ -69,7 +69,8 @@ $versionsArray = array(
 	265,
 	266,
 	267,
-	268
+	268,
+	269
 );
 
 /* count the number of items in the versions array */
@@ -131,8 +132,8 @@ switch($step)
 		}
 	
 		/** UPDATE THE VERSION IN THE DATABASE **/
-		$updateVersion = "UPDATE sms_system SET sysVersion = '2.6.9', sysBaseVersion = '2.6', ";
-		$updateVersion.= "sysIncrementVersion = '.9', sysLaunchStatus = 'n' WHERE sysid = 1 LIMIT 1";
+		$updateVersion = "UPDATE sms_system SET sysVersion = '2.6.10', sysBaseVersion = '2.6', ";
+		$updateVersion.= "sysIncrementVersion = '.10', sysLaunchStatus = 'n' WHERE sysid = 1 LIMIT 1";
 		$updateVersionResult = mysql_query( $updateVersion );
 		
 		break;
