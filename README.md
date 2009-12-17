@@ -18,6 +18,8 @@ Latest Changes
 * Updated the post count page to combine user records together by email address for compiling total count report
 * Added a hidden field to the contact page to help prevent spam bots from sending spam messages through the contact form
 * Cleaned up some stray PHP short open tags in the install script
+* Added a hidden field to the join page to help prevent spam bots from sending spam messages through the join form
+* Added a hidden field to the docking request page to help prevent spam bots from sending spam messages through the docking request form
 
 Changed Files
 -------------
@@ -31,5 +33,7 @@ Changed Files
 * admin/reports/count.php
 * admin/user/inbox.php
 * pages/contact.php
+* pages/dockingrequest.php
+* pages/join.php
 * pages/news.php
 * update/269.php
