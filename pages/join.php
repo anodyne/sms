@@ -9,8 +9,8 @@ Author: David VanScott [ davidv@anodyne-productions.com ]
 File: pages/join.php
 Purpose: To display the join application and submit it
 
-System Version: 2.6.7
-Last Modified: 2008-12-22 1304 EST
+System Version: 2.6.10
+Last Modified: 2009-12-17 1132 EST
 **/
 
 /* define the page class and vars */
@@ -24,6 +24,7 @@ if( isset( $_GET['agree'] ) ) {
 
 if( isset( $_POST['action_x'] ) ) {
 	$action = $_POST['action_x'];
+	$spam = $_POST['check_field'];
 }
 
 if(isset($_GET['position']) && is_numeric($_GET['position'])) {
@@ -42,122 +43,124 @@ if( isset( $sessionCrewid ) ) {
 }
 
 /* submit the application */
-if( isset( $action ) ) {
-	
-	/* get today's date */
-	$today = getdate();
-	
-	/* build the insert query that's going to be used */
-	$join = "INSERT INTO sms_crew ( username, password, crewType, email, realName, aim, msn, yim, icq, ";
-	$join.= "positionid, firstName, middleName, lastName, gender, species, heightFeet, heightInches, ";
-	$join.= "weight, eyeColor, hairColor, age, physicalDesc, personalityOverview, strengths, ambitions, hobbies, ";
-	$join.= "languages, history, serviceRecord, father, mother, brothers, sisters, spouse, children, ";
-	$join.= "otherFamily, image, joinDate ) ";
-	$join.= "VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %d, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, ";
-	$join.= "%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %d )";
-	
-	/* run the query through sprintf and the safety function to scrub for security issues */
-	$query = sprintf(
-		$join,
-		escape_string( $_POST['username'] ),
-		escape_string( md5( $_POST['password'] ) ),
-		escape_string( 'pending' ),
-		escape_string( $_POST['email_address'] ),
-		escape_string( $_POST['realname'] ),
-		escape_string( $_POST['aim'] ),
-		escape_string( $_POST['msn'] ),
-		escape_string( $_POST['yim'] ),
-		escape_string( $_POST['icq'] ),
-		escape_string( $_POST['position'] ),
-		escape_string( $_POST['firstName'] ),
-		escape_string( $_POST['middleName'] ),
-		escape_string( $_POST['lastName'] ),
-		escape_string( $_POST['gender'] ),
-		escape_string( $_POST['species'] ),
-		escape_string( $_POST['feet'] ),
-		escape_string( $_POST['inches'] ),
-		escape_string( $_POST['weight'] ),
-		escape_string( $_POST['eyeColor'] ),
-		escape_string( $_POST['hairColor'] ),
-		escape_string( $_POST['age'] ),
-		escape_string( $_POST['appearance'] ),
-		escape_string( $_POST['personality'] ),
-		escape_string( $_POST['strengths'] ),
-		escape_string( $_POST['ambitions'] ),
-		escape_string( $_POST['hobbies'] ),
-		escape_string( $_POST['languages'] ),
-		escape_string( $_POST['history'] ),
-		escape_string( $_POST['serviceRecord'] ),
-		escape_string( $_POST['father'] ),
-		escape_string( $_POST['mother'] ),
-		escape_string( $_POST['brothers'] ),
-		escape_string( $_POST['sisters'] ),
-		escape_string( $_POST['spouse'] ),
-		escape_string( $_POST['children'] ),
-		escape_string( $_POST['otherFamily'] ),
-		escape_string( $_POST['image'] ),
-		escape_string( $today[0] )
-	);
-	
-	/* run the query */
-	$result = mysql_query( $query );
-	
-	/* if there's a positive result from the query, send the emails */
-	if ( $result != "" ) {
-	
-		/* loop through the POST array and dynamically assign variables */
-		foreach( $_POST as $key => $value )
-		{
-			$$key = stripslashes( $value );
-		}
-	
-		/* set variables and send email to User */
-		$subject = $emailSubject . " Application Submitted";
-		$to = $email_address;
-		$from = printCO('short_rank') . " <" . printCOEmail() . ">";
-		$message = "Greetings $realname,
-	
-You have recently submitted an application to join the $shipPrefix $shipName.  The CO has been informed of this and should be looking over you application.  Expect an answer within the next few days on whether or not you are accepted. 
-	
-Thank you for your interest.
-
-This is an automatically generated message, please do not respond.";
+if (isset($action))
+{
+	if (empty($spam))
+	{	
+		/* get today's date */
+		$today = getdate();
 		
-		/* send the email */
-		mail( $to, $subject, $message, "From: " . $from . "\nX-Mailer: PHP/" . phpversion() );
-
-		/* get the position name of the application */
-		$getPositionName = "SELECT positionName FROM sms_positions WHERE positionid = '$position'";
-		$getPositionNameResult = mysql_query( $getPositionName );
-		$positioninfo = mysql_fetch_array( $getPositionNameResult );
+		/* build the insert query that's going to be used */
+		$join = "INSERT INTO sms_crew ( username, password, crewType, email, realName, aim, msn, yim, icq, ";
+		$join.= "positionid, firstName, middleName, lastName, gender, species, heightFeet, heightInches, ";
+		$join.= "weight, eyeColor, hairColor, age, physicalDesc, personalityOverview, strengths, ambitions, hobbies, ";
+		$join.= "languages, history, serviceRecord, father, mother, brothers, sisters, spouse, children, ";
+		$join.= "otherFamily, image, joinDate ) ";
+		$join.= "VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %d, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, ";
+		$join.= "%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %d )";
 		
-		/* set the subject */
-		$subject = $emailSubject . " Character Awaiting Approval";
+		/* run the query through sprintf and the safety function to scrub for security issues */
+		$query = sprintf(
+			$join,
+			escape_string( $_POST['username'] ),
+			escape_string( md5( $_POST['password'] ) ),
+			escape_string( 'pending' ),
+			escape_string( $_POST['email_address'] ),
+			escape_string( $_POST['realname'] ),
+			escape_string( $_POST['aim'] ),
+			escape_string( $_POST['msn'] ),
+			escape_string( $_POST['yim'] ),
+			escape_string( $_POST['icq'] ),
+			escape_string( $_POST['position'] ),
+			escape_string( $_POST['firstName'] ),
+			escape_string( $_POST['middleName'] ),
+			escape_string( $_POST['lastName'] ),
+			escape_string( $_POST['gender'] ),
+			escape_string( $_POST['species'] ),
+			escape_string( $_POST['feet'] ),
+			escape_string( $_POST['inches'] ),
+			escape_string( $_POST['weight'] ),
+			escape_string( $_POST['eyeColor'] ),
+			escape_string( $_POST['hairColor'] ),
+			escape_string( $_POST['age'] ),
+			escape_string( $_POST['appearance'] ),
+			escape_string( $_POST['personality'] ),
+			escape_string( $_POST['strengths'] ),
+			escape_string( $_POST['ambitions'] ),
+			escape_string( $_POST['hobbies'] ),
+			escape_string( $_POST['languages'] ),
+			escape_string( $_POST['history'] ),
+			escape_string( $_POST['serviceRecord'] ),
+			escape_string( $_POST['father'] ),
+			escape_string( $_POST['mother'] ),
+			escape_string( $_POST['brothers'] ),
+			escape_string( $_POST['sisters'] ),
+			escape_string( $_POST['spouse'] ),
+			escape_string( $_POST['children'] ),
+			escape_string( $_POST['otherFamily'] ),
+			escape_string( $_POST['image'] ),
+			escape_string( $today[0] )
+		);
 		
-		/* set the TO email addresses */
-		$emFetch = "SELECT crewid, email FROM sms_crew WHERE (accessOthers LIKE 'x_approve_users,%' OR accessOthers LIKE '%,x_approve_users' ";
-		$emFetch.= "OR accessOthers LIKE '%,x_approve_users,%')";
-		$emFetchR = mysql_query($emFetch);
+		/* run the query */
+		$result = mysql_query( $query );
 		
-		$email_array = array();
+		/* if there's a positive result from the query, send the emails */
+		if ( $result != "" ) {
 		
-		while($em_raw = mysql_fetch_array($emFetchR)) {
-			extract($em_raw, EXTR_OVERWRITE);
+			/* loop through the POST array and dynamically assign variables */
+			foreach( $_POST as $key => $value )
+			{
+				$$key = stripslashes( $value );
+			}
+		
+			/* set variables and send email to User */
+			$subject = $emailSubject . " Application Submitted";
+			$to = $email_address;
+			$from = printCO('short_rank') . " <" . printCOEmail() . ">";
+			$message = "Greetings $realname,
+		
+	You have recently submitted an application to join the $shipPrefix $shipName.  The CO has been informed of this and should be looking over you application.  Expect an answer within the next few days on whether or not you are accepted. 
+		
+	Thank you for your interest.
+	
+	This is an automatically generated message, please do not respond.";
 			
-			$email_array[] = $em_raw[1];
-		}
-		
-		/* if there isn't anything in the email array, put the CO into the string */
-		if(count($email_array) == 0) {
-			$to = printCOEmail();
-		} else {
-			$to = implode(",", $email_array);
-		}
-		
-		$from = $realname . " <" . $email_address . ">";
+			/* send the email */
+			mail( $to, $subject, $message, "From: " . $from . "\nX-Mailer: PHP/" . phpversion() );
 	
-		$message = "A new user has applied to join the " . $shipName . ".  Below you will find the information along with the link to the site to login and approve or deny the application.
-
+			/* get the position name of the application */
+			$getPositionName = "SELECT positionName FROM sms_positions WHERE positionid = '$position'";
+			$getPositionNameResult = mysql_query( $getPositionName );
+			$positioninfo = mysql_fetch_array( $getPositionNameResult );
+			
+			/* set the subject */
+			$subject = $emailSubject . " Character Awaiting Approval";
+			
+			/* set the TO email addresses */
+			$emFetch = "SELECT crewid, email FROM sms_crew WHERE (accessOthers LIKE 'x_approve_users,%' OR accessOthers LIKE '%,x_approve_users' ";
+			$emFetch.= "OR accessOthers LIKE '%,x_approve_users,%')";
+			$emFetchR = mysql_query($emFetch);
+			
+			$email_array = array();
+			
+			while($em_raw = mysql_fetch_array($emFetchR)) {
+				extract($em_raw, EXTR_OVERWRITE);
+				
+				$email_array[] = $em_raw[1];
+			}
+			
+			/* if there isn't anything in the email array, put the CO into the string */
+			if(count($email_array) == 0) {
+				$to = printCOEmail();
+			} else {
+				$to = implode(",", $email_array);
+			}
+			
+			$from = $realname . " <" . $email_address . ">";
+		
+			$message = "A new user has applied to join the " . $shipName . ".  Below you will find the information along with the link to the site to login and approve or deny the application.
+	
 == USER INFORMATION ==
 Real Name: $realname
 Email Address: $email_address
@@ -210,11 +213,11 @@ $playerExperience
 $samplePost
 
 Login to your control panel at " . $webLocation . "login.php?action=login to approve or deny this application.";
-	
-		mail( $to, $subject, $message, "From: " . $from . "\nX-Mailer: PHP/" . phpversion());
-	
-	} /* close the if statement to send emails */
-	
+		
+			mail( $to, $subject, $message, "From: " . $from . "\nX-Mailer: PHP/" . phpversion());
+		
+		} /* close the if statement to send emails */
+	} /* close the spam check */
 } /* close the if statement on submitting the application */
 
 ?>
@@ -300,7 +303,9 @@ Login to your control panel at " . $webLocation . "login.php?action=login to app
 			</td>
 		</tr>
 		<tr>
-			<td colspan="3" height="20"></td>
+			<td colspan="3" height="20">
+				<input type="text" style="border: 1px solid transparent; background: transparent; color: transparent;" tabindex="500" name="check_field" value="" />
+			</td>
 		</tr>
 		<tr>
 			<td colspan="3" class="fontLarge"><b>Character Information</b</td>
