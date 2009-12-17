@@ -757,7 +757,7 @@ $installSteps = array(
 					<tr>
 						<td colspan="3" height="15"></td>
 					</tr>
-					<?
+					<?php
 					
 					$ranks = "SELECT rank.rankid, rank.rankName, rank.rankImage, dept.deptColor FROM sms_ranks AS rank, ";
 					$ranks.= "sms_departments AS dept WHERE dept.deptClass = rank.rankClass AND dept.deptDisplay = 'y' ";
@@ -776,7 +776,7 @@ $installSteps = array(
 						<td>&nbsp;</td>
 						<td>
 							<select name="rank">
-								<?
+								<?php
 								
 								while( $rank = mysql_fetch_assoc( $ranksResult ) ) {
 									extract( $rank, EXTR_OVERWRITE );
@@ -794,7 +794,7 @@ $installSteps = array(
 						<td>&nbsp;</td>
 						<td>
 							<select name="position">
-							<?
+							<?php
 							
 							while( $position = mysql_fetch_assoc( $positionsResult ) ) {
 								extract( $position, EXTR_OVERWRITE );
