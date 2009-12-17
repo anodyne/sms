@@ -17,6 +17,7 @@ Latest Changes
 * Changed install process so that the variables file doesn't have a closing PHP tag to prevent the output already sent errors
 * Updated the post count page to combine user records together by email address for compiling total count report
 * Added a hidden field to the contact page to help prevent spam bots from sending spam messages through the contact form
+* Cleaned up some stray PHP short open tags in the install script
 
 Changed Files
 -------------
