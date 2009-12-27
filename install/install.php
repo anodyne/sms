@@ -9,8 +9,8 @@ Author: David VanScott [ davidv@anodyne-productions.com ]
 File: install/install.php
 Purpose: Installation script for SMS
 
-System Version: 2.6.8
-Last Modified: 2009-01-11 0224 EST
+System Version: 2.6.10
+Last Modified: 2009-12-27 0125 EST
 **/
 
 session_start();
@@ -646,9 +646,7 @@ $installSteps = array(
 				$dbName = "<?php echo $_POST['dbName'];?>";<br />
 				$dbUser = "<?php echo $_POST['dbUser'];?>";<br />
 				$dbPassword = "<?php echo $_POST['dbPassword'];?>";<br />
-				$dbErrorMessage = "<?php echo $dbErrorMessage;?>";<br /><br />
-				
-				<?php print( htmlentities( '?>' ) ); ?>
+				$dbErrorMessage = "<?php echo $dbErrorMessage;?>";
 			</div>
 			<br />
 			
