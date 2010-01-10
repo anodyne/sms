@@ -25,8 +25,6 @@ Included Functions:
 	print_active_crew_select_menu( $type, $author, $id, $section, $sub )
 **/
 
-define('JP_AUTHORS', 8);
-
 /**
 	Admin function that will pull the user's first name, last name, rank, and rank image
 **/

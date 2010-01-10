@@ -100,6 +100,7 @@ define( 'SHIP_NAME', $shipName );
 define( 'SHIP_PREFIX', $shipPrefix );
 define( 'SHIP_REG', $shipRegistry );
 define( 'SIM_YEAR', $simmYear );
+define( 'JP_AUTHORS', 8 );
 
 /*
 |---------------------------------------------------------------
