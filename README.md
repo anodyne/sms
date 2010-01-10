@@ -3,7 +3,7 @@ SIMM MANAGEMENT SYSTEM
 
 Current Version
 ---------------
-2.6.10-pre
+2.6.10
 
 Latest Changes
 --------------
@@ -20,12 +20,14 @@ Latest Changes
 * Cleaned up some stray PHP short open tags in the install script
 * Added a hidden field to the join page to help prevent spam bots from sending spam messages through the join form
 * Added a hidden field to the docking request page to help prevent spam bots from sending spam messages through the docking request form
+* Updated the version check class to handle 2 digits in the third section of the version number
 
 Changed Files
 -------------
 * update.php
 * framework/functionsGlobal.php
 * framework/classMenu.php
+* framework/classes/check.php
 * install/install.php
 * install/resource_data.php
 * install/resource_structure.php
