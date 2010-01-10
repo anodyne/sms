@@ -10,8 +10,8 @@ File: framework/classes/check.php
 Purpose: Page with the class that is called by the system to check for
 	ACP items liked saved posts, pending items, SMS updates and PMs
 
-System Version: 2.6.9
-Last Modified: 2009-08-11 0911 EST
+System Version: 2.6.10
+Last Modified: 2010-01-09 2132 EST
 
 Included Classes:
 	SystemCheck
@@ -67,11 +67,10 @@ class SystemCheck
 		$versionFixed = ($major >= 3) ? substr_replace($rssVersion, '1', 0, 1) : $rssVersion;
 		
 		/* if we're supposed to show the update info, do it */
-		if($continue == 1)
+		if ($continue == 1)
 		{
-			/* if the version the user has and the version from the XML file are different, display the notice */
-			if( VER_FILES < $rssVersion && VER_DB < $rssVersion ) {
-			
+			if (version_compare(VER_FILES, $rssVersion, '<') && version_compare(VER_DB, $rssVersion, '<'))
+			{
 				$this->output_array[0][1] = "<div class='notify-red'>";
 				$this->output_array[0][1].= "<b class='red case'>Update Available</b> &mdash; ";
 				$this->output_array[0][1].= $label ." ". $versionFixed . " is now available.<br /><br />";
@@ -81,15 +80,19 @@ class SystemCheck
 				$this->output_array[0][1].= "Go to the <a href='http://www.anodyne-productions.com/' target='_blank'>Anodyne site</a> to download this update.";
 				$this->output_array[0][1].= "</div>";
 			
-			} if( VER_DB > VER_FILES && VER_DB == $rssVersion ) {
+			}
 			
+			if (version_compare(VER_DB, VER_FILES, '>') && version_compare(VER_DB, $rssVersion, '=='))
+			{
 				$this->output_array[0][1] = "<div class='notify-orange'>";
 				$this->output_array[0][1].= "<b class='orange case'>Update Warning</b> &mdash; ";
 				$this->output_array[0][1].= "Your database is running SMS version " . VER_DB . ", however, your files are running version " . VER_FILES . " and need to be updated. Please upload the correct files before continuing. If you do not update your files and database SMS will not work correctly!";
 				$this->output_array[0][1].= "</div>";
 			
-			} if( VER_FILES > VER_DB && VER_FILES == $rssVersion ) {
-	
+			}
+			
+			if (version_compare(VER_FILES, VER_DB, '>') && version_compare(VER_FILES, $rssVersion, '=='))
+			{
 				/* format the version right for the URL pass */
 				$urlVersion = str_replace( ".", "", VER_DB );
 	
@@ -105,7 +108,7 @@ class SystemCheck
 				$this->output_array[0][1].= "</div>";
 			
 			}
-		} /* close the continue variable */
+		}
 	}
 	
 	function pendings()
