@@ -10,8 +10,8 @@ File: update.php
 Purpose: New update system that will dynamically pull the right update file based
 	on what version of the system is in use
 
-System Version: 2.6.9
-Last Modified: 2009-06-15 0623 EST
+System Version: 2.6.10
+Last Modified: 2010-01-09 2159 EST
 **/
 
 /* define the step var */
@@ -161,21 +161,23 @@ switch($step)
 			
 			<? if( $step == "1" ) { ?>
 			
-			SMS 2.6.9 is an update to latest release of SMS which updates the system with the following changes:
+			SMS 2.6.10 is an update to latest release of SMS which updates the system with the following changes:
 			
 			<ul>
-				<li>Fixed typos in docking request email sent out to the starbase CO</li>
-				<li>Fixed bug with docked ship activation and rejection where the docking CO wouldn&rsquo;t be sent a copy of the acceptance or rejection email</li>
-				<li>Fixed location of the Facebox loading graphic</li>
-				<li>Fixed bug in database management page where only entries with a display flag of yes would be shown instead of all entries</li>
-				<li>Fixed bug in database display page where departments with database use turned off still appeared</li>
-				<li>Updated the version check class with the following changes:
-					<ul>
-						<li>SMS now understands that version 3.0 is actually Nova 1.0</li>
-						<li>Updated the download link to go straight to the Anodyne site instead of the SMS download page (done because the Anodyne site has been re-built from the ground up and the old URLs won't work</li>
-						<li>Updated the XML file to version_sms.xml so that SMS and Nova can use separate version files</li>
-					</ul>
-				</li>
+				<li>Fixed bug on news page where selecting a category would narrow down news but the category listed next to each news item wouldn't be accurate</li>
+				<li>Fixed bug in menu class where setting a general menu item to require login wouldn't allow anyone to see the link, logged in or not</li>
+				<li>Fixed bug where mission posts wouldn't be deleted when the delete action was triggered from the manage posts page</li>
+				<li>Fixed bug where post tags couldn't be updated from the Edit Mission Post page</li>
+				<li>Updated the database to set postAuthors as a text field</li>
+				<li>Added ability to change the number of authors on a post</li>
+				<li>Added loading graphic to the inbox to avoid blank pages while loading large inboxes</li>
+				<li>Changed install process so that the variables file doesn't have a closing PHP tag to prevent the output already sent errors</li>
+				<li>Updated the post count page to combine user records together by email address for compiling total count report</li>
+				<li>Added a hidden field to the contact page to help prevent spam bots from sending spam messages through the contact form</li>
+				<li>Cleaned up some stray PHP short open tags in the install script</li>
+				<li>Added a hidden field to the join page to help prevent spam bots from sending spam messages through the join form</li>
+				<li>Added a hidden field to the docking request page to help prevent spam bots from sending spam messages through the docking request form</li>
+				<li>Updated the version check class to handle 2 digits in the third section of the version number</li>
 			</ul>
 			
 			<h1><a href="update.php?step=2&version=<?=$urlVersion;?>">Next Step &raquo;</a></h1>
