@@ -25,6 +25,7 @@
 * admin/reports/count.php
 * admin/user/inbox.php
 * pages/contact.php
+* pages/join.php
 * pages/news.php
 
 + update/269.php
