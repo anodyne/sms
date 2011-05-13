@@ -29,8 +29,6 @@ define('SKIN_PATH', $skins . $path . '/'); /* define the skin path */
 		
 		<link rel="stylesheet" href="<?=$webLocation . SKIN_PATH;?>style.css" type="text/css" />
 		
-		<script type="text/javascript">
-			<? include_once( "framework/functionsJavascript.js" ); ?>
-		</script>
+		<?php include_once 'framework/functionsJavascript.php';?>
 	</head>
 	<body>
